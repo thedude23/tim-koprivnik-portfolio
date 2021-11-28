@@ -1,0 +1,29 @@
+.is-hidden {
+  display: none !important;
+}
+
+:empty {
+  display: none;
+}
+
+::selection {
+  background-color: $color-2;
+  color: $color-1;
+}
+
+// Forms
+:checked {
+  box-shadow: 0px 0px 5px 2px green;
+}
+
+:indeterminate {
+  box-shadow: 0px 0px 5px 2px orange;
+}
+
+:required {
+  box-shadow: 0px 0px 5px 2px red;
+}
+
+:optional {
+  box-shadow: 0px 0px 5px 2px blue;
+}

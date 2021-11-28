@@ -1,0 +1,19 @@
+//
+// @file
+// This file includes all imports
+//
+
+// @import "vendor/bootstrap.scss"; // intended for bootstrap frameworks so, if you use one in your project, create this partial
+// @import "library/variables/*.*"; // all defined variables (colors, effects, gutters, media queries, typography, etc.)
+// @import "library/mixins/*.*"; // all defined functions/mixins
+// @import "base/*.*"; // all resets, and boilerplate code, used across the whole website
+// @import "layout/*.*"; // all styles necessary for the layout of the site, i.e., header, footer
+// @import "components/**/*.*"; // all styles for all components that are to be created for one website, including buttons, carousels, tabs, modals, etc.
+// @import "states/*.*"; // all specific states, e.g. display states
+
+
+@import "library/index"; // all defined variables (colors, effects, gutters, media queries, typography, etc.) & mixins
+@import "base/index"; // all resets, and boilerplate code, used across the whole website
+@import "layout/index"; // all styles necessary for the layout of the site, i.e., header, footer
+@import "components/index"; // all styles for all components that are to be created for one website, including buttons, carousels, tabs, modals, etc.
+@import "states/index"; // all specific states, e.g. display states

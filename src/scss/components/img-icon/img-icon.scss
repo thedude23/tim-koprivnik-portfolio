@@ -1,0 +1,7 @@
+img {
+  // filter: $image-shadow;
+}
+
+img:not([alt]) {
+	outline: 10px red;
+}

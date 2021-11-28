@@ -1,0 +1,82 @@
+a {
+  color: $color-3;
+
+  // LVHA rule for styling links
+  &:link {
+    text-decoration: none;
+    color: $color-3;
+  }
+
+  //   &:visited {}
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    color: $color-1;
+  }
+
+  //   &:active {}
+
+  &:focus {
+    outline: 2px solid $color-3;
+    outline-offset: 6px;
+  }
+
+  &:not([class]) {
+    color: blue;
+  }
+}
+
+.helper {
+  display: none;
+}
+
+button {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  min-width: 5rem;
+  cursor: pointer;
+  border: 1px solid black;
+
+  &:hover {
+    color: #000000;
+    background-color: #8c7ae6;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 3px #192a56;
+
+    outline: 2px dashed slateblue;
+    outline-offset: 6px;
+    background-color: black;
+
+    // Focusable elements, like buttons, will show a focus ring when they are in focus—even when clicked. In this sort of situation, we apply 'outline: none' to the element to remove the focus ring.
+    // outline: none;
+  }
+
+  &:focus-within .helper {
+    display: block;
+  }
+
+  &:focus-visible {
+    // With :focus-visible you can present a focus style when an element receives focus via the keyboard, while also using the outline: none rule to prevent it when a pointer device interacts with it.
+    outline: 1px solid black;
+  }
+
+  // Triggered when an element is actively being interacted with— such as a click—before click is released.
+  &:active {
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background: grey;
+    border-color: grey;
+    cursor: not-allowed;
+  }
+}
+
+// You can attach styles to that element when the url contains #content.
+#content:target {
+  background: yellow;
+}

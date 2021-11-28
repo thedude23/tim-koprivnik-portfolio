@@ -1,0 +1,105 @@
+/**
+  * * (https://web.dev/learn/css/animations/)
+  * * All animation properties:
+    * * animation-name
+    * * animation-duration
+    * * animation-timing-function
+    * * animation-delay
+    * * animation-iteration-count
+    * * animation-direction
+    * * animation-fill-mode
+    * * animation-play-state
+  * * Shorthand: animation: my-animation 10s ease-in-out 1s infinite forwards forwards running;
+  */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+}
+
+.pulser {
+  width: 30px;
+  height: 30px;
+  background: rebeccapurple;
+  border-radius: 50%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: blueviolet;
+    border-radius: 50%;
+    z-index: -1;
+
+    animation: pulse 1000ms cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.8);
+    background: darkturquoise;
+  }
+}
+
+.grower {
+  width: 200px;
+  height: 80px;
+  background: lightseagreen;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation-name: grow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+
+.mover {
+  width: 50px;
+  height: 50px;
+  background: royalblue;
+
+  animation: move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(10, end); // linear;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}

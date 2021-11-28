@@ -1,0 +1,18 @@
+@import '../library/variables/colors';
+@import '../library/variables/effects';
+
+footer {
+  background-color: $color-3;
+
+  .wrapper {
+    background: red;
+    display: flex;
+    justify-content: center;
+    padding: $gutter-sm;
+  }
+
+  p {
+    color: $color-1;
+    // text-align: center;
+  }
+}

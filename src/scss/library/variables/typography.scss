@@ -1,0 +1,93 @@
+// * Nunito font
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800&display=swap');
+
+// * Helsinki font
+@font-face {
+  font-family: 'Helsinki';
+  src: url('../fonts/helsinki/helsinki.woff') format('woff');
+  font-weight: normal; // = 400
+}
+
+// * Inter font
+@font-face {
+  font-family: 'Inter--Regular';
+  src: url('../fonts/inter/static/Inter-Regular.ttf') format('truetype');
+  font-weight: normal; // = 400
+  font-style: normal;
+}
+
+html {
+  font-size: 1rem; // 16px
+}
+
+body {
+  // font-family: 'Nunito', sans-serif;
+  font-family: 'Inter--Regular';
+  text-decoration-color: $color-3;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.2em;
+  word-break: normal;
+  // font-variant-numeric: slashed-zero;
+  // font-variant-caps: small-caps;
+  // text-align: justify;
+  // writing-mode: vertical-lr;
+}
+
+span {
+  font-style: inherit;
+}
+
+p {
+  color: $color-1;
+  max-width: 45ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-spacing: normal; // = 0
+  // text-indent: 2em;
+
+  // &::first-line {}
+  // &:first-child {}
+  // &:last-child {}
+  &:nth-child(even) {
+    color: $color-3;
+  }
+  // &:nth-of-type(2)::selection {}
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: $letter-spacing-lg;
+  color: $color-3;
+  text-shadow: $text-shadow;
+  text-transform: lowercase;
+  text-decoration: underline; // overline
+  text-underline-offset: $gutter;
+  text-decoration-color: $color-4;
+  padding-bottom: $gutter-lg;
+
+  // &::first-letter {
+  //   color: $color-1;
+  //   font-weight: bold;
+  //   // line-height: 1;
+  //   // margin-right: $gutter-xs;
+  //   // margin-top: $gutter-xs;
+  //   // float: left;
+  // }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+label {
+  font-weight: bold;
+}

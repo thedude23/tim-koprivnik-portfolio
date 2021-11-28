@@ -1,0 +1,27 @@
+.home {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden; // no scroll bars
+  align-items: center;
+  text-align: center;
+  background: 
+    linear-gradient(
+      to right,
+      rgba($primary-color, 0.5),
+      rgba($primary-color, 0.9)
+    ),
+    url('../img/tk-blue.jpg') center center;
+  background-size: cover;
+
+  &__name {
+    font-size: 5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid set-text-color($primary-color);
+
+    &--last {
+      color: $secondary-color;
+      font-weight: 700;
+    }
+  }
+}

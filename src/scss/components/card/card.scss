@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
+
+.face {
+  --flow-space: 1rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid cornflowerblue;
+  backface-visibility: hidden;
+}
+
+.back {
+  display: grid;
+  place-items: center;
+  background: cornflowerblue;
+  transform: rotateY(180deg);
+}
