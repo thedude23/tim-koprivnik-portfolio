@@ -1,25 +1,25 @@
 // const { mode } = process.env.NODE_ENV === 'production' ? 'production' : 'development';
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== 'production';
 
-const path = require("path");
-const glob = require("glob");
-const globImporter = require("node-sass-glob-importer");
+const path = require('path');
+const glob = require('glob');
+const globImporter = require('node-sass-glob-importer');
 
-// const { HmtlWebpackPlugin } = require("html-webpack-plugin");
+// const { HtmlWebpackPlugin } = require("html-webpack-plugin");
 // const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
 module.exports = {
   // mode: isDev, // = production
   entry: {
-    styles: ["./src/scss/styles.scss"],
-    bundle: glob.sync("./src/js/**/*.js", {}),
+    dist: ['./src/scss/styles.scss'],
+    bundle: glob.sync('./src/js/**/*.js', {}),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].min.js", // could be also: bundle.js
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].min.js', // could be also: bundle.js
     // chunkFilename: "js/async/[name].chunk.js",
     // pathinfo: true,
     // publicPath: "../",
@@ -33,12 +33,12 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       // filename: "[name].[ext]?[hash]",
-      filename: "css/[name].min.css",
+      filename: 'css/[name].min.css',
     }),
     new CleanWebpackPlugin(),
-    new SVGSpritemapPlugin([path.resolve(__dirname, "src/icons/**/*.svg")], {
+    new SVGSpritemapPlugin([path.resolve(__dirname, 'src/icons/**/*.svg')], {
       output: {
-        filename: "./icons/sprite.svg",
+        filename: './icons/sprite.svg',
         svg: {
           sizes: false,
         },
@@ -50,10 +50,10 @@ module.exports = {
           title: false,
           symbol: true,
           use: true,
-          view: "-view",
+          view: '-view',
         },
       },
-    })
+    }),
   ],
   module: {
     rules: [
@@ -61,10 +61,10 @@ module.exports = {
         test: /\.(config.js)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "[path][name].[ext]",
-              outputPath: "./",
+              name: '[path][name].[ext]',
+              outputPath: './',
             },
           },
         ],
@@ -73,7 +73,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
       {
@@ -82,19 +82,19 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(csv|tsv)$/i,
-        use: ["csv-loader"],
+        use: ['csv-loader'],
       },
       {
         test: /\.xml$/i,
-        use: ["xml-loader"],
+        use: ['xml-loader'],
       },
       {
         test: /modernizrrc\.js$/,
-        loader: "modernizr",
+        loader: 'modernizr',
       },
       {
         test: /\.(css|sass|scss)$/,
@@ -103,21 +103,21 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               importLoaders: 2,
             },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                config: path.join(__dirname, "postcss.config.js"),
+                config: path.join(__dirname, 'postcss.config.js'),
               },
             },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sassOptions: {
                 importer: globImporter(),
@@ -129,14 +129,14 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: [path.join(__dirname, "node_modules")],
-    extensions: [".js", ".json"],
+    modules: [path.join(__dirname, 'node_modules')],
+    extensions: ['.js', '.json'],
   },
   watchOptions: {
     aggregateTimeout: 300,
   },
   // Tell us only about the errors.
-  stats: "errors-only",
+  stats: 'errors-only',
   // Suppress performance errors.
   performance: {
     hints: false,

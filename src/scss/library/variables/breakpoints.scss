@@ -1,0 +1,74 @@
+// * Defined breakpoints
+$breakpoints: (
+  'sm': 576px,
+  'md': 767px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px,
+) !default;
+
+// * Mixin to manage responsive breakpoints
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+/*
+// Alternative approach
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+// * Small devices (landscape phones, 576px and up)
+// @media (min-width: $bp-sm) { ... }
+@mixin media-sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+// * Medium devices (tablets, 768px and up)
+// @media (min-width: $bp-md) { ... }
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+// * Large devices (desktops, 992px and up)
+// @media (min-width: $bp-lg) { ... }
+@mixin media-lg {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+// * X-Large devices (large desktops, 1200px and up)
+// @media (min-width: $bp-xl) { ... }
+@mixin media-xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+// * XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: $bp-xxl) { ... }
+@mixin media-xxl {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+*/

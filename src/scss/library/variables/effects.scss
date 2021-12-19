@@ -1,12 +1,8 @@
-/*
-  * Shadows (https://web.dev/learn/css/shadows/)
-  */
+// * Shadows (https://web.dev/learn/css/shadows/)
 $box-shadow: 0px 0px 20px 5px $color-3;
 $image-shadow: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 
-/*
-  * Transitions / transformations (https://web.dev/learn/css/transitions/)
-  */
+// * Transitions / transformations (https://web.dev/learn/css/transitions/)
 $circle: circle(50%);
 $polygon: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 $rotate: rotateX(10deg) rotateY(10deg) rotateZ(10deg);
@@ -43,9 +39,7 @@ $skew: skew(10deg);
   transform: $skew;
 }
 
-/*
-  * Gradients (https://web.dev/learn/css/gradients/)
-  */
+// * Gradients (https://web.dev/learn/css/gradients/)
 $linear-gradient: linear-gradient(-45deg, blue -30%, transparent 80%),
   linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold, bisque);
 $radial-gradient: radial-gradient(
@@ -94,9 +88,7 @@ $conic-gradient-2: conic-gradient(
   border: 10px solid;
 }
 
-/*
-  * Filters (https://web.dev/learn/css/filters/)
-  */
+// * Filters (https://web.dev/learn/css/filters/)
 $blur: blur(0.2em);
 $brightness: brightness(80%);
 $contrast: contrast(160%);
@@ -144,14 +136,12 @@ $backdrop-filter: blur(10px);
   filter: $hue-rotate;
 }
 
-// The difference between backdrop-filter and filter is that the backdrop-filter property only applies the filters to the background, where the filter property applies it to the whole element.
 .backdrop-filter {
+  // The difference between backdrop-filter and filter is that the backdrop-filter property only applies the filters to the background, where the filter property applies it to the whole element.
   backdrop-filter: $backdrop-filter;
 }
 
-/*
-  * Text (https://web.dev/learn/css/typography/)
-  */
+// * Text (https://web.dev/learn/css/typography/)
 $writing-mode: vertical-lr;
 $text-orientation: upright;
 $text-shadow: 1px 1px 2px #f01c, 1px -1px 2px #f0cc, -1px 1px 2px #f0fc,
@@ -184,10 +174,8 @@ $text-normal: 400; // normal
   font-weight: $text-normal;
 }
 
-/*
-  * Blend Modes (https://web.dev/learn/css/blend-modes/)
-    You can use most of the blend modes available in a design tool with CSS, using the mix-blend-mode or the background-blend-mode properties. The mix-blend-mode applies blending to a whole element and the background-blend-mode applies blending to the background of an element.
-  */
+// * Blend Modes (https://web.dev/learn/css/blend-modes/)
+// You can use most of the blend modes available in a design tool with CSS, using the mix-blend-mode or the background-blend-mode properties. The mix-blend-mode applies blending to a whole element and the background-blend-mode applies blending to the background of an element.
 .duotone {
   max-width: 450px;
   position: relative;
@@ -216,9 +204,7 @@ $text-normal: 400; // normal
   }
 }
 
-/*
-  * Other effects
-  */
+// * Other effects
 .background-effect {
   aspect-ratio: 1/1;
   border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);

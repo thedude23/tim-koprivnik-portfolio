@@ -1,23 +1,13 @@
-// * Nunito font
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800&display=swap');
-
-// * Helsinki font
-@font-face {
-  font-family: 'Helsinki';
-  src: url('../fonts/helsinki/helsinki.woff') format('woff');
-  font-weight: normal; // = 400
-}
-
-// * Inter font
-@font-face {
-  font-family: 'Inter--Regular';
-  src: url('../fonts/inter/static/Inter-Regular.ttf') format('truetype');
-  font-weight: normal; // = 400
-  font-style: normal;
-}
+// * Defined font variables
+$font-weight-thin: 100;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 800;
+$line-height-xxl: 2;
 
 html {
-  font-size: 1rem; // 16px
+  font-size: 1.6rem; // 16px
 }
 
 body {
@@ -37,6 +27,7 @@ span {
   font-style: inherit;
 }
 
+/*
 p {
   color: $color-1;
   max-width: 45ch;
@@ -54,10 +45,12 @@ p {
   }
   // &:nth-of-type(2)::selection {}
 }
+*/
 
+/*
 h1 {
   font-family: 'Nunito', sans-serif;
-  font-size: 3rem;
+  font-size: 4.8rem;
   font-weight: 100;
   letter-spacing: $letter-spacing-lg;
   color: $color-3;
@@ -77,16 +70,21 @@ h1 {
   //   // float: left;
   // }
 }
+*/
 
+/*
 h2 {
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-weight: 900;
 }
+*/
 
+/*
 h3 {
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
 }
+*/
 
 label {
   font-weight: bold;

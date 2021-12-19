@@ -1,0 +1,14 @@
+// * Defined constraints
+$gutter: 1rem; // 10px
+
+$spacing: $gutter; // 10px
+$spacing-quarter: $spacing * 0.25; // 2.5px
+$spacing-half: $spacing * 0.5; // 5px
+$spacing-and-half: $spacing * 1.5; // 15px
+$spacing-double: $spacing * 2; // 20px
+$spacing-triple: $spacing * 3; // 30px
+$spacing-quadruple: $spacing * 4; // 40px
+$spacing-sextuple: $spacing * 6; // 60px
+
+$letter-spacing: 0.25em;
+$letter-spacing-lg: 0.5em;
