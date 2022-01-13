@@ -1,6 +1,27 @@
-node_modules
-# .vscode
-# .editorconfig
-# .prettierignore
-# .prettierrc
-# stylelintrc
+# Ignore project files that should not be in version control
+# /bin
+# /drush/contrib/
+# /files
+# /files_private
+# /public/core/
+# /public/modules/contrib/
+# /public/themes/contrib/
+# /public/profiles/config_installer/
+# /public/profiles/contrib/
+# /public/libraries/
+# /public/sites/default/files
+# /vendor/
+# /console
+
+/node_modules
+# /.vscode
+# /.editorconfig
+# /.prettierignore
+# /.prettierrc
+# /.stylelintrc
+
+# Ignore OSX generated files
+.DS_Store
+._*
+/.gitattributes
+*.sql

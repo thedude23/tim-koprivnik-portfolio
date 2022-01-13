@@ -1,12 +1,4 @@
-/*
-body {
-  background-color: $color-2;
-  color: $color-1;
-  font-weight: $text-normal;
-}
-*/
-
-// Basics
+// * Basics
 body {
   background: $primary-color;
   color: set-text-color($primary-color); // white
@@ -64,7 +56,7 @@ main {
   }
 }
 
-// Footer
+// * Footer
 footer {
   font-size: 0.6rem;
   position: fixed;
@@ -75,7 +67,7 @@ footer {
   color: set-text-color($primary-color);
 }
 
-// Small screens
+// * Small screens
 @include breakpoint(sm) {
   .home__name-first {
     font-size: 2rem;
@@ -148,7 +140,7 @@ footer {
   }
 }
 
-// Medium screens
+// * Medium screens
 @include breakpoint(md) {
   .home__name {
     font-size: 3rem;

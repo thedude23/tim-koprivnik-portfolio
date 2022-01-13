@@ -1,18 +1,35 @@
 // * Defined breakpoints
 $breakpoints: (
-  'sm': 576px,
-  'md': 767px,
-  'lg': 992px,
-  'xl': 1200px,
-  'xxl': 1400px,
+  'sm': (
+    min-width: 576px,
+  ),
+  'md': (
+    min-width: 768px,
+  ),
+  'lg': (
+    min-width: 992px,
+  ),
+  'xl': (
+    min-width: 1200px,
+  ),
+  'xxl': (
+    min-width: 1400px,
+  ),
 ) !default;
 
-// * Mixin to manage responsive breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// * Mixin to manage responsive breakpoints (1)
 @mixin breakpoint($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
     // Prints a media query based on the value
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+    // @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
     }
   }
@@ -24,51 +41,27 @@ $breakpoints: (
   }
 }
 
-/*
-// Alternative approach
-$bp-sm: 576px;
-$bp-md: 768px;
-$bp-lg: 992px;
-$bp-xl: 1200px;
-$bp-xxl: 1400px;
-
-// * Small devices (landscape phones, 576px and up)
-// @media (min-width: $bp-sm) { ... }
-@mixin media-sm {
-  @media (max-width: 576px) {
-    @content;
+// * Alternative mixin to manage responsive breakpoints (2)
+@mixin breakpoint($point) {
+  @if $point == $xxl {
+    @media (min-width: $xxl) {
+      @content;
+    }
+  } @else if $point == $xl {
+    @media (min-width: $xl) {
+      @content;
+    }
+  } @else if $point == $lg {
+    @media (min-width: $lg) {
+      @content;
+    }
+  } @else if $point == $md {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if $point == $sm {
+    @media (min-width: $sm) {
+      @content;
+    }
   }
 }
-
-// * Medium devices (tablets, 768px and up)
-// @media (min-width: $bp-md) { ... }
-@mixin media-md {
-  @media screen and (min-width: 768px) {
-    @content;
-  }
-}
-
-// * Large devices (desktops, 992px and up)
-// @media (min-width: $bp-lg) { ... }
-@mixin media-lg {
-  @media screen and (min-width: 992px) {
-    @content;
-  }
-}
-
-// * X-Large devices (large desktops, 1200px and up)
-// @media (min-width: $bp-xl) { ... }
-@mixin media-xl {
-  @media screen and (min-width: 1200px) {
-    @content;
-  }
-}
-
-// * XX-Large devices (larger desktops, 1400px and up)
-// @media (min-width: $bp-xxl) { ... }
-@mixin media-xxl {
-  @media screen and (min-width: 1400px) {
-    @content;
-  }
-}
-*/

@@ -1,18 +1,22 @@
 {
+  "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Chrome",
+      "name": "Xdebug for Project mytest",
+      "type": "php",
       "request": "launch",
-      "type": "pwa-chrome",
-      "url": "http://127.0.0.1:5500/",
-      "webRoot": "${workspaceFolder}"
+      "port": 9003,
+      "pathMappings": {
+        "/app": "${workspaceFolder}"
+      }
     },
     {
-      "name": "Attach to Chrome",
-      "port": 5050,
-      "request": "attach",
-      "type": "pwa-chrome",
-      "webRoot": "${workspaceFolder}"
+      "name": "Launch currently open script",
+      "type": "php",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${fileDirname}",
+      "port": 9003
     }
   ]
 }
