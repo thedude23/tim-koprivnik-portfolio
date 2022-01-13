@@ -30,3 +30,5 @@
       - list-style-type: "🛒"; // "space-counter" / disc / circle / "\1F44D" -- thumbs up sign (https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
     - Shorthand: list-style: <'list-style-type'> || <'list-style-position'> || <'list-style-image'>
 
+
+For additional help, look here: https://www.w3schools.com/howto/default.asp
