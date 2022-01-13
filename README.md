@@ -1,10 +1,10 @@
-# tix theme
+# TIX
 
-Tim Koprivnik's portfolio
+Tim Koprivnik's project.
 
 ## Introduction
 
-This is Tim Koprivnik's custom theme, named "tix". It is based on the starter theme he also made by himself. Style follows the [BEM methodology](http://getbem.com/) and Javascript is written as ES6. The JS and SCSS files are compiled and minified with webpack.
+This is Tim Koprivnik's project, named "TIX". It is based on the custom theme he made by himself. Style follows the [BEM methodology](http://getbem.com/) and Javascript is written as ES6. The JS and SCSS files are compiled and minified with webpack.
 
 ## Requirements
 
@@ -26,13 +26,11 @@ Setup the developing environment by running
 
     nvm use
     npm i
-    npx husky i
 
 Explanations for commands.
 
 - `nvm use` : Install and use the correct version of Node.
 - `npm i` : As stated above; Install dependencies and link local packages.
-- `npx husky i` : Execute husky package binary; Install git-hooks for the project.
 
 ## Structure for files and folders
 
@@ -48,16 +46,16 @@ tix
 │   │   │   file-name-2.js
 │   │   │   file-name-3.js
 │   └───icons
-│   │    |   sprite.svg
+│   │    │    sprite.svg
 │   │    └───subdir
-│   │        |   some-icon.svg
+│   │        │    some-icon.svg
 │   └───media
-│   |    |   some-media.png/jpg
-│   |    └───subdir
-│   |        |   some-media.png/jpg
+│   │     │    some-media.png/jpg
+│   │     └───subdir
+│   │         │    some-media.png/jpg
 │   └───fonts
-│   |    └───font-folder
-│   |        |   some-font.woff/ttf
+│   │     └───font-folder
+│   │         │    some-font.woff/ttf
 └───dist
     └───css
     └───js
