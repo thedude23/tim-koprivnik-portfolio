@@ -54,7 +54,7 @@ tix
 │   │     └───subdir
 │   │         │    some-media.png/jpg
 │   └───fonts
-│   │     └───font-folder
+│   │     └───subdir
 │   │         │    some-font.woff/ttf
 └───dist
     └───css
