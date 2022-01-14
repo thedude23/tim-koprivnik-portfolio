@@ -6,6 +6,12 @@ $font-weight-bold: 700;
 $font-weight-black: 800;
 $line-height-xxl: 2;
 
+$base-font-size: 1.6rem; // 16px
+$base-line-height: 1.5; // 24px -- absolute line-height. For relative line-height (1.385), see http://cssleading.com/.
+
+// Font families
+$default-font-family: 'Nunito', sans-serif;
+
 html {
   font-size: 1.6rem; // 16px
 }

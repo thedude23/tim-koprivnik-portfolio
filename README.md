@@ -49,7 +49,7 @@ tix
 │   │    │    sprite.svg
 │   │    └───subdir
 │   │        │    some-icon.svg
-│   └───media
+│   └───images
 │   │     │    some-media.png/jpg
 │   │     └───subdir
 │   │         │    some-media.png/jpg
