@@ -2,8 +2,8 @@
 /* All imports */
 /* ----- */
 
-@import "vendor/index"; // 3rd party libraries.
 @import 'library/index'; // Variables (colors, effects, gutters, media queries, typography, etc.) & mixins.
+@import 'vendor/index'; // 3rd party libraries.
 @import 'base/index'; // Resets, and boilerplate code, used across the whole website.
 @import 'layout/index'; // Styles necessary for the layout of the site, i.e., header, footer.
 @import 'components/index'; // Styles for all components that are to be created for one website, including buttons, carousels, tabs, modals, etc.

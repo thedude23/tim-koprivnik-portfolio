@@ -3,6 +3,18 @@
 /* ----- */
 
 // Box sizing
+/*
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+*/
+
 *,
 *::after,
 *::before {

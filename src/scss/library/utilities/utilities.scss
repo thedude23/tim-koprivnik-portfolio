@@ -39,6 +39,15 @@
   border: 0;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
 .bg-dark {
   background-color: $color-1;
 }
@@ -47,6 +56,10 @@
 }
 .bg-white {
   background-color: $color-3;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 .text-dark {
@@ -170,15 +183,15 @@
 }
 
 .text-light {
-  font-weight: $text-light;
+  font-weight: $font-weight-thin;
 }
 
 .text-bold {
-  font-weight: $text-bold;
+  font-weight: $font-weight-bold;
 }
 
 .text-normal {
-  font-weight: $text-normal;
+  font-weight: $font-weight-regular;
 }
 
 // Blend modes effects

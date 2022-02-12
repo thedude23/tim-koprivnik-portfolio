@@ -2,7 +2,7 @@
 /* Constraints */
 /* ----- */
 
-// Gaps / Spacing
+// Gaps
 $gap: 1rem; // 10px
 $gap-quarter: $gap * 0.25; // 2.5px
 $gap-half: $gap * 0.5; // 5px
@@ -10,8 +10,15 @@ $gap-and-half: $gap * 1.5; // 15px
 $gap-double: $gap * 2; // 20px
 $gap-triple: $gap * 3; // 30px
 $gap-quadruple: $gap * 4; // 40px
+$gap-fivetuple: $gap * 5; // 50px
 $gap-sextuple: $gap * 6; // 60px
 
 // Container widths
 $container-width: 114rem; // 1140px
 $container-content-width: 76.8rem; // 768px
+
+// Button size
+$button-icon-size: 1.25rem;
+
+// Layout image width
+$layout-header-image-width: 18.75rem;

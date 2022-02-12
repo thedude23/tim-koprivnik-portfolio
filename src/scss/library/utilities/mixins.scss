@@ -2,7 +2,7 @@
 /* Mixins */
 /* ----- */
 
-// Mixin to manage responsive breakpoints (1st option)
+// Responsive breakpoints (1st option)
 @mixin breakpoint($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
@@ -20,8 +20,8 @@
   }
 }
 
-// Mixin to manage responsive breakpoints (2nd option)
-@mixin breakpoint($point) {
+// Responsive breakpoints (2nd option)
+@mixin breakpoint-alt($point) {
   @if $point == $xxl {
     @media (min-width: $xxl) {
       @content;
@@ -43,6 +43,306 @@
       @content;
     }
   }
+}
+
+// Responsive breakpoints (3rd option)
+@mixin breakpoint-sm {
+  @include breakpoint($sm) {
+    @content;
+  }
+}
+@mixin breakpoint-md {
+  @include breakpoint($md) {
+    @content;
+  }
+}
+@mixin breakpoint-lg {
+  @include breakpoint($lg) {
+    @content;
+  }
+}
+@mixin breakpoint-xl {
+  @include breakpoint($xl) {
+    @content;
+  }
+}
+@mixin breakpoint-xxl {
+  @include breakpoint($xxl) {
+    @content;
+  }
+}
+@mixin breakpoint-sm-down {
+  @include breakpoint(0 $sm - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-md-down {
+  @include breakpoint(0 $md - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-lg-down {
+  @include breakpoint(0 $lg - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-xl-down {
+  @include breakpoint(0 $xl - 1) {
+    @content;
+  }
+}
+@mixin breakpoint-xxl-down {
+  @include breakpoint(0 $xxl - 1) {
+    @content;
+  }
+}
+
+// Max-width
+@mixin max-width {
+  @include breakpoint($container-width) {
+    @content;
+  }
+}
+
+// Transition
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// Container
+@mixin container(
+  $container-max-width: $container-width,
+  $outer-container-break: $md,
+  $v-margin: 0,
+  $v-padding: 0,
+  $v-padding-large: 0,
+  $h-padding: 0,
+  $h-padding-large: $h-padding
+) {
+  margin: #{$v-margin} auto;
+  max-width: #{$container-max-width};
+  padding: #{$v-padding} #{$h-padding};
+  width: 100%;
+
+  @include breakpoint($outer-container-break) {
+    padding: #{$v-padding-large} #{$h-padding-large};
+  }
+
+  @include breakpoint($container-max-width) {
+    padding-left: calc(
+      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+    );
+    padding-right: calc(
+      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+    );
+  }
+}
+
+// Breakout -- for elements that should be edge-to-edge even when a parent container uses the wrapper mixin
+@mixin breakout($h-padding: $gap-double) {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(#{$h-padding} + calc(-50vw + 50%));
+  padding-right: calc(#{$h-padding} + calc(-50vw + 50%));
+}
+
+// Hero section -- adds a background color, background picture, layouts in 2 columns and manages a size of the image
+@mixin hero(
+  $img-size: $layout-header-image-width,
+  $img-size-xl: $layout-header-image-width,
+  $padding-v-xl: $gap-fivetuple
+) {
+  @include breakout($h-padding: 0); // .....
+
+  // background-image: url('/themes/custom/gs_exovify/images/header_background.svg');
+  background-image: none;
+  // background-position: -13px top; // There was a glitch with background not starting from 0
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+// Standard margin
+@mixin margin($margin-bottom: $gap) {
+  margin-bottom: $margin-bottom;
+}
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
+// Word-wrap
+@mixin word-wrap() {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+// Border
+@mixin border(
+  $border-width: 1px,
+  $border-style: solid,
+  $border-color: $color-border
+) {
+  border-color: $border-color;
+  border-style: $border-style;
+  border-width: $border-width;
+}
+
+// Placeholder
+@mixin placeholder($color: $color-2, $font-size: $font-size) {
+  &::-webkit-input-placeholder {
+    // Chrome/Opera/Safari
+    color: $color;
+    font-size: $font-size;
+  }
+
+  &::-moz-placeholder {
+    // Firefox 19+
+    color: $color;
+    font-size: $font-size;
+  }
+
+  &:-ms-input-placeholder {
+    // IE 10+
+    color: $color;
+    font-size: $font-size;
+  }
+
+  &:-moz-placeholder {
+    // Firefox 18-
+    color: $color;
+    font-size: $font-size;
+    opacity: 1;
+  }
+}
+
+// Reset button styles
+@mixin button-reset() {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+// Links
+@mixin link($color: $color-link, $color-hover: $color-link--hover) {
+  color: $color;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include transition(all, 0.2s, ease-in);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+// Box -- places an element to colored box with defined font styles
+@mixin box($bg-color: $color-1, $font-size: $font-size) {
+  @include word-wrap();
+
+  background-color: $bg-color;
+  border: $border-default;
+  font-family: $font-family;
+  font-size: $font-size;
+  display: block;
+  padding: $gap;
+}
+
+// Count circle -- adds a background color to a circled area around the text (circles could be of 2 sizes: small and large
+@mixin count-circle($size: 'big', $bg-color: $color-1, $color: $color-2) {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+
+  &::before {
+    background-color: $bg-color;
+    border-radius: 50%;
+    color: $color;
+    content: counter(step); // Display the value of section counter
+    counter-increment: step; // Increment the value of section counter by 1
+    display: block;
+    height: 3.75rem;
+    width: 3.75rem;
+    font-size: $font-30;
+    font-family: $font-family;
+    margin-right: $gap-and-half;
+    text-align: center;
+    padding: $gap-half $gap-and-half;
+  }
+
+  @if $size == 'small' {
+    &::before {
+      font-size: $font-size;
+      height: 2.8125rem;
+      width: 2.8125rem;
+      padding: 0.3rem 1rem;
+    }
+  }
+
+  @if $size == 'big' {
+    &::before {
+      line-height: 1.4;
+    }
+  }
+
+  @if $size == 'large' {
+    @include xs {
+      &::before {
+        font-size: 5.625rem;
+        height: 11.25rem;
+        width: 11.25rem;
+        padding: 1.5rem 2.5rem;
+      }
+    }
+  }
+}
+
+// Icon
+@mixin icon(
+  $icon: '/src/icons/src/angle-right.svg',
+  $h: $button-icon-size,
+  $w: $button-icon-size
+) {
+  &::after {
+    @include transition(all, 0.2s, ease-in-out);
+
+    content: '';
+    background-image: url($icon);
+    background-size: $h $w;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: $h;
+    width: $w;
+  }
+}
+
+// List reset
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 // Calculate rem (root em) units from pixels for font-size and line-height

@@ -1,6 +1,6 @@
 .is-hidden {
-  display: none; // Add "!important" if needed.
-  visibility: hidden; // Add "!important" if needed.
+  display: none !important;
+  visibility: hidden !important;
 }
 
 :empty {

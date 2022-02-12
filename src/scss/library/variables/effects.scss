@@ -6,6 +6,9 @@
 $box-shadow: 0px 0px 20px 5px $color-3;
 $image-shadow: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 
+// Border
+$border-default: 1px solid $color-border;
+
 // Transitions / transformations (https://web.dev/learn/css/transitions/)
 $circle: circle(50%);
 $polygon: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
@@ -53,15 +56,6 @@ $saturate: saturate(155%);
 $sepia: sepia(70%);
 $hue-rotate: hue-rotate(120deg);
 $backdrop-filter: blur(10px);
-
-// Text (https://web.dev/learn/css/typography/)
-$writing-mode: vertical-lr;
-$text-orientation: upright;
-$text-shadow: 1px 1px 2px #f01c, 1px -1px 2px #f0cc, -1px 1px 2px #f0fc,
-  -1px -1px 2px #f0fc, 0 0 16px #f0fa, 0 0 64px #f0fd;
-$text-light: 100; // lighter
-$text-bold: 900; // bolder
-$text-normal: 400; // normal
 
 // Blend Modes (https://web.dev/learn/css/blend-modes/)
 // You can use most of the blend modes available in a design tool with CSS, using the mix-blend-mode or the background-blend-mode properties. The mix-blend-mode applies blending to a whole element and the background-blend-mode applies blending to the background of an element.
