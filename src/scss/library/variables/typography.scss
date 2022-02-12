@@ -32,6 +32,10 @@ $letter-spacing-1: 4.75px;
 $letter-spacing-2: 2.7px;
 $letter-spacing-3: 2.35px;
 
+// Margins
+$heading-margin-default: 0 0 $gap-half;
+$paragraph-margin-bottom: $gap;
+
 // Other (https://web.dev/learn/css/typography/)
 $writing-mode: vertical-lr;
 $text-orientation: upright;

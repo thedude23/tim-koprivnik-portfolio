@@ -183,20 +183,113 @@
   z-index: -1;
 }
 
-// Hero section -- adds a background color, background picture, layouts in 2 columns and manages a size of the image
-@mixin hero(
-  $img-size: $layout-header-image-width,
-  $img-size-xl: $layout-header-image-width,
-  $padding-v-xl: $gap-fivetuple
+// Headings
+@mixin heading-1(
+  $font-family: $font-family-alt,
+  $font-size: $font-size-lg,
+  $line-height: $line-height,
+  $color: $color-2,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: $font-weight-thin,
+  $margin: $heading-margin-default
 ) {
-  @include breakout($h-padding: 0);
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$h1-font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
 
-  // background-image: url('/themes/custom/gs_exovify/images/header_background.svg');
-  background-image: none;
-  // background-position: -13px top; // There was a glitch with background not starting from 0
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  @include breakpoint($md) {
+    font-size: $font-size-xl;
+  }
+
+  @include breakpoint($lg) {
+    font-size: $font-size-xxl;
+  }
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin heading-2(
+  $font-family: $font-family-alt,
+  $font-size: $font-size-md,
+  $line-height: $line-height,
+  $color: $color-2,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: $font-weight-thin,
+  $margin: $heading-margin-default
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$h1-font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  @include breakpoint($md) {
+    font-size: $font-size-lg;
+  }
+
+  @include breakpoint($lg) {
+    font-size: $font-size-xl;
+  }
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+@mixin heading-3(
+  $font-family: $font-family-alt,
+  $font-size: $font-size,
+  $line-height: $line-height,
+  $color: $color-2,
+  $color-link: inherit,
+  $color-link-hover: inherit,
+  $font-weight: $font-weight-thin,
+  $margin: $heading-margin-default
+) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  font-style: normal;
+  font-size: #{$h1-font-size};
+  line-height: #{$line-height};
+  margin: #{$margin};
+  width: auto;
+
+  @include breakpoint($md) {
+    font-size: $font-size-md;
+  }
+
+  @include breakpoint($lg) {
+    font-size: $font-size-lg;
+  }
+
+  &__link {
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
 }
 
 // Standard margin
@@ -213,6 +306,45 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
+}
+
+// Reset button styles
+@mixin button-reset() {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+// Links
+@mixin link($color: $color-link, $color-hover: $color-link--hover) {
+  color: $color;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include transition(all, 0.2s, ease-in);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+// Hero section -- adds a background color, background picture, layouts in 2 columns and manages a size of the image
+@mixin hero(
+  $img-size: $layout-header-image-width,
+  $img-size-xl: $layout-header-image-width,
+  $padding-v-xl: $gap-fivetuple
+) {
+  @include breakout($h-padding: 0);
+
+  // background-image: url('/themes/custom/gs_exovify/images/header_background.svg');
+  background-image: none;
+  // background-position: -13px top; // There was a glitch with background not starting from 0
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 // Border
@@ -251,29 +383,6 @@
     color: $color;
     font-size: $font-size;
     opacity: 1;
-  }
-}
-
-// Reset button styles
-@mixin button-reset() {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
-// Links
-@mixin link($color: $color-link, $color-hover: $color-link--hover) {
-  color: $color;
-  cursor: pointer;
-  text-decoration: none;
-
-  @include transition(all, 0.2s, ease-in);
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: $color-hover;
   }
 }
 
