@@ -1,8 +1,12 @@
-// * Shadows (https://web.dev/learn/css/shadows/)
+/* ----- */
+/* Effects */
+/* ----- */
+
+// Shadows (https://web.dev/learn/css/shadows/)
 $box-shadow: 0px 0px 20px 5px $color-3;
 $image-shadow: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 
-// * Transitions / transformations (https://web.dev/learn/css/transitions/)
+// Transitions / transformations (https://web.dev/learn/css/transitions/)
 $circle: circle(50%);
 $polygon: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
 $rotate: rotateX(10deg) rotateY(10deg) rotateZ(10deg);
@@ -11,35 +15,7 @@ $scale: scaleX(1.2) scaleY(1.2);
 $translate: translateX(40px) translateY(25px);
 $skew: skew(10deg);
 
-.circle {
-  clip-path: $circle;
-}
-
-.polygon {
-  clip-path: $polygon;
-}
-
-.rotate {
-  transform: $rotate;
-}
-
-.rotate3d {
-  transform: $rotate3d;
-}
-
-.scale {
-  transform: $scale;
-}
-
-.translate {
-  transform: $translate;
-}
-
-.skew {
-  transform: $skew;
-}
-
-// * Gradients (https://web.dev/learn/css/gradients/)
+// Gradients (https://web.dev/learn/css/gradients/)
 $linear-gradient: linear-gradient(-45deg, blue -30%, transparent 80%),
   linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold, bisque);
 $radial-gradient: radial-gradient(
@@ -66,29 +42,7 @@ $conic-gradient-2: conic-gradient(
   steelblue 320deg
 );
 
-.linear-gradient {
-  background: $linear-gradient;
-}
-
-.radial-gradient {
-  background: $radial-gradient;
-}
-
-.radial-gradient-2 {
-  background: $radial-gradient-2;
-}
-
-.conic-gradient {
-  background: $conic-gradient;
-}
-
-.conic-gradient-2 {
-  background: $conic-gradient-2;
-  border-radius: 50%;
-  border: 10px solid;
-}
-
-// * Filters (https://web.dev/learn/css/filters/)
+// Filters (https://web.dev/learn/css/filters/)
 $blur: blur(0.2em);
 $brightness: brightness(80%);
 $contrast: contrast(160%);
@@ -100,48 +54,7 @@ $sepia: sepia(70%);
 $hue-rotate: hue-rotate(120deg);
 $backdrop-filter: blur(10px);
 
-.blur {
-  filter: $blur;
-}
-
-.brightness {
-  filter: $brightness;
-}
-
-.contrast {
-  filter: $contrast;
-}
-
-.grayscale {
-  filter: $grayscale;
-}
-
-.invert {
-  filter: $invert;
-}
-
-.opacity {
-  filter: $opacity;
-}
-
-.saturate {
-  filter: $saturate;
-}
-
-.sepia {
-  filter: $sepia;
-}
-
-.hue-rotate {
-  filter: $hue-rotate;
-}
-
-.backdrop-filter {
-  // The difference between backdrop-filter and filter is that the backdrop-filter property only applies the filters to the background, where the filter property applies it to the whole element.
-  backdrop-filter: $backdrop-filter;
-}
-
-// * Text (https://web.dev/learn/css/typography/)
+// Text (https://web.dev/learn/css/typography/)
 $writing-mode: vertical-lr;
 $text-orientation: upright;
 $text-shadow: 1px 1px 2px #f01c, 1px -1px 2px #f0cc, -1px 1px 2px #f0fc,
@@ -150,74 +63,5 @@ $text-light: 100; // lighter
 $text-bold: 900; // bolder
 $text-normal: 400; // normal
 
-.vertical-text {
-  writing-mode: $writing-mode;
-}
-
-.text-orientation {
-  text-orientation: $text-orientation; // mixed
-}
-
-.text-shadow {
-  text-shadow: $text-shadow;
-}
-
-.text-light {
-  font-weight: $text-light;
-}
-
-.text-bold {
-  font-weight: $text-bold;
-}
-
-.text-normal {
-  font-weight: $text-normal;
-}
-
-// * Blend Modes (https://web.dev/learn/css/blend-modes/)
+// Blend Modes (https://web.dev/learn/css/blend-modes/)
 // You can use most of the blend modes available in a design tool with CSS, using the mix-blend-mode or the background-blend-mode properties. The mix-blend-mode applies blending to a whole element and the background-blend-mode applies blending to the background of an element.
-.duotone {
-  max-width: 450px;
-  position: relative;
-  margin: 0 auto;
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  &::after {
-    background: hotpink;
-    mix-blend-mode: multiply;
-  }
-
-  &::before {
-    background: navy;
-    mix-blend-mode: lighten;
-  }
-}
-
-// * Other effects
-.background-effect {
-  aspect-ratio: 1/1;
-  border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);
-  padding: 1rem;
-
-  font-family: 'Google Sans', 'Google Sans Text', Roboto, sans-serif;
-  font-size: 10rem;
-  font-weight: bold;
-  text-align: center;
-
-  background-image: url('https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?auto=format&fit=crop&w=690&q=80');
-  background-size: contain;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}

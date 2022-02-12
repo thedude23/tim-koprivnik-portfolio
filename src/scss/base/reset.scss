@@ -1,12 +1,15 @@
+/* ----- */
+/* Reset (https://piccalil.li/blog/a-modern-css-reset/) */
+/* ----- */
+
+// Box sizing
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  // word-wrap: break-word;
 }
 
+// Reset margins
 body,
 h1,
 h2,
@@ -22,6 +25,7 @@ dd {
   margin: 0;
 }
 
+// Set up the font-size to 1rem = 10px and smooth scroll behavior
 html {
   font-size: 62.5%; // 1rem = 10px
 
@@ -30,21 +34,14 @@ html {
   }
 }
 
+// Set up the body
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5; // = 150%
-
-  /*
-  // Fixed footer
-  &::after {
-    content: '';
-    display: block;
-    height: ; // should be same as footer's height
-  }
-  */
+  line-height: $line-height;
 }
 
+// Remove default list style for lists
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
@@ -54,20 +51,24 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-img {
-  max-width: 100%;
+// Make images easier to work with
+img,
+picture {
   display: block;
+  max-width: 100%;
 }
 
+// Make form elements easier to work with
 input,
 button,
 textarea,
 select {
-  font-family: inherit;
+  font: inherit; // Alternative: font-family: inherit;
   // font-size: 100%;
   width: 150px;
 }
 
+// Remove animations for people who've turned them off
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

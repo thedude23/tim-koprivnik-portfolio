@@ -1,7 +1,7 @@
 // * Basics
 body {
-  background: $primary-color;
-  color: set-text-color($primary-color); // white
+  background: $color-1;
+  color: set-text-color($color-1); // white
   height: 100vh;
   // font-family: 'Roboto Mono', monospace;
   // font-family: 'MuseoModerno', cursive;
@@ -20,12 +20,12 @@ h3 {
 }
 
 a {
-  color: set-text-color($primary-color);
+  color: set-text-color($color-1);
   text-decoration: none;
 }
 
 .text-secondary {
-  color: $secondary-color;
+  color: $color-2;
 }
 
 header {
@@ -50,7 +50,7 @@ main {
       @include transition-ease;
 
       &:hover {
-        color: $secondary-color;
+        color: $color-2;
       }
     }
   }
@@ -64,7 +64,7 @@ footer {
   right: 1rem;
   text-align: right;
   padding: 1rem;
-  color: set-text-color($primary-color);
+  color: set-text-color($color-1);
 }
 
 // * Small screens

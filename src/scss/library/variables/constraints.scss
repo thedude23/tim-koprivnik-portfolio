@@ -1,17 +1,18 @@
-// * Defined constraints
-$gutter: 1rem; // 10px
+/* ----- */
+/* Constraints */
+/* ----- */
 
-$spacing: $gutter; // 10px
-$spacing-quarter: $spacing * 0.25; // 2.5px
-$spacing-half: $spacing * 0.5; // 5px
-$spacing-and-half: $spacing * 1.5; // 15px
-$spacing-double: $spacing * 2; // 20px
-$spacing-triple: $spacing * 3; // 30px
-$spacing-quadruple: $spacing * 4; // 40px
-$spacing-sextuple: $spacing * 6; // 60px
+$gap: 1rem; // 10px
+$gap-quarter: $gap * 0.25; // 2.5px
+$gap-half: $gap * 0.5; // 5px
+$gap-and-half: $gap * 1.5; // 15px
+$gap-double: $gap * 2; // 20px
+$gap-triple: $gap * 3; // 30px
+$gap-quadruple: $gap * 4; // 40px
+$gap-sextuple: $gap * 6; // 60px
 
-$letter-spacing: 0.25em;
-$letter-spacing-lg: 0.5em;
+$letter-gap: 0.25em;
+$letter-gap-lg: 0.5em;
 
-$container-width: 1140px;
-$container-content-width: 768px;
+$container-width: 114rem; // 1140px
+$container-content-width: 76.8rem; // 768px

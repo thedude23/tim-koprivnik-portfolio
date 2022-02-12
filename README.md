@@ -12,6 +12,7 @@ Requirements for developing:
 
 - [NodeJS](https://nodejs.org/en/)
 - [NPM](https://npmjs.com/)
+  - Version: <= 12
 
 ## Commands
 

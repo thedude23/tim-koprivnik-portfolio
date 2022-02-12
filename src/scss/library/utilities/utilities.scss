@@ -1,0 +1,359 @@
+/* ----- */
+/* Mixins */
+/* ----- */
+
+// Calculate rem (root em) units from pixels for font-size and line-height
+@mixin font-size($font-size, $line-height: '') {
+  @if $font-size == 'inherit' {
+    @error 'No inherit values allowed in font-size mixin!';
+  } @else if unit($font-size) == 'rem' {
+    font-size: $font-size;
+  } @else {
+    font-size: ($font-size / $base-font-size) * 1rem;
+  }
+
+  // Handle the line-height
+  @if $line-height != '' {
+    // Check if line-height is in px
+    @if unit($line-height) == 'px' {
+      line-height: ($line-height / $base-font-size) * 1rem;
+    } @else {
+      // Check if line-height is in rem and handle the line-height
+      @if unit($line-height) == 'rem' {
+        line-height: $line-height;
+      }
+      // The line-height is a multiplier
+      @else {
+        $font-size-px: nounit($font-size);
+        $base-font-size-px: nounit($base-font-size);
+
+        // Convert the font-size if it is in rem
+        @if unit($font-size) == 'rem' {
+          $font-size-px: nounit($font-size) * nounit($base-font-size);
+        }
+
+        $conversion: $base-font-size-px *
+          ($font-size-px / $base-font-size-px) *
+          $line-height /
+          $base-font-size-px;
+        line-height: #{$conversion}rem;
+      }
+    }
+  }
+}
+
+// Count content
+@mixin content_count($number_of_items...) {
+  @each $item in $number_of_items {
+    @if type-of($item) == number {
+      @for $i from 1 through $item {
+        &:nth-child(#{$i}):nth-last-child(#{$item - $i + 1}) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+// Transitions
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+/* ----- */
+/* Functions */
+/* ----- */
+
+// Set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+/* ----- */
+/* Main utilities */
+/* ----- */
+
+.flex {
+  display: flex;
+  gap: $gap;
+}
+
+.grid {
+  display: grid;
+  gap: $gap;
+}
+
+.container {
+  // align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+
+  // margin: 0 auto; // More modern way: margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-content-width;
+  // padding: 0 $gap;
+  padding: 0 2em; // More modern way: padding-inline: 2em;
+}
+
+// Screen reader only
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; // Added line
+  border: 0;
+}
+
+.bg-dark {
+  background-color: $color-1;
+}
+.bg-light {
+  background-color: $color-2;
+}
+.bg-white {
+  background-color: $color-3;
+}
+
+.text-dark {
+  color: $color-1;
+}
+.text-light {
+  color: $color-2;
+}
+.text-white {
+  color: $color-3;
+}
+
+/* ----- */
+/* Utilities for effects */
+/* ----- */
+
+// Transitions / transformations effects
+.circle {
+  clip-path: $circle;
+}
+
+.polygon {
+  clip-path: $polygon;
+}
+
+.rotate {
+  transform: $rotate;
+}
+
+.rotate3d {
+  transform: $rotate3d;
+}
+
+.scale {
+  transform: $scale;
+}
+
+.translate {
+  transform: $translate;
+}
+
+.skew {
+  transform: $skew;
+}
+
+// Gradient effects
+.linear-gradient {
+  background: $linear-gradient;
+}
+
+.radial-gradient {
+  background: $radial-gradient;
+}
+
+.radial-gradient-2 {
+  background: $radial-gradient-2;
+}
+
+.conic-gradient {
+  background: $conic-gradient;
+}
+
+.conic-gradient-2 {
+  background: $conic-gradient-2;
+  border-radius: 50%;
+  border: 10px solid;
+}
+
+// Filter effects
+.blur {
+  filter: $blur;
+}
+
+.brightness {
+  filter: $brightness;
+}
+
+.contrast {
+  filter: $contrast;
+}
+
+.grayscale {
+  filter: $grayscale;
+}
+
+.invert {
+  filter: $invert;
+}
+
+.opacity {
+  filter: $opacity;
+}
+
+.saturate {
+  filter: $saturate;
+}
+
+.sepia {
+  filter: $sepia;
+}
+
+.hue-rotate {
+  filter: $hue-rotate;
+}
+
+.backdrop-filter {
+  backdrop-filter: $backdrop-filter; // The difference between backdrop-filter and filter is that the backdrop-filter property only applies the filters to the background, where the filter property applies it to the whole element.
+}
+
+// Text effects
+.vertical-text {
+  writing-mode: $writing-mode;
+}
+
+.text-orientation {
+  text-orientation: $text-orientation;
+}
+
+.text-shadow {
+  text-shadow: $text-shadow;
+}
+
+.text-light {
+  font-weight: $text-light;
+}
+
+.text-bold {
+  font-weight: $text-bold;
+}
+
+.text-normal {
+  font-weight: $text-normal;
+}
+
+// Blend modes effects
+.duotone {
+  max-width: 450px;
+  position: relative;
+  margin: 0 auto;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &::after {
+    background: hotpink;
+    mix-blend-mode: multiply;
+  }
+
+  &::before {
+    background: navy;
+    mix-blend-mode: lighten;
+  }
+}
+
+// Background effects
+.background-effect {
+  aspect-ratio: 1/1;
+  border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);
+  padding: 1rem;
+
+  font-family: 'Google Sans', 'Google Sans Text', Roboto, sans-serif;
+  font-size: 10rem;
+  font-weight: bold;
+  text-align: center;
+
+  background-image: url('https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?auto=format&fit=crop&w=690&q=80');
+  background-size: contain;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Keyframes effects
+.pulser {
+  width: 30px;
+  height: 30px;
+  background: rebeccapurple;
+  border-radius: 50%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: blueviolet;
+    border-radius: 50%;
+    z-index: -1;
+
+    animation: pulse 1000ms cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite;
+  }
+}
+
+.grower {
+  width: 200px;
+  height: 80px;
+  background: lightseagreen;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation-name: grow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.mover {
+  width: 50px;
+  height: 50px;
+  background: royalblue;
+
+  animation: move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(10, end); // linear;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}

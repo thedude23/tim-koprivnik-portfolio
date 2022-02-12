@@ -4,11 +4,11 @@
   overflow: hidden; // no scroll bars
   align-items: center;
   text-align: center;
-  // background: 
+  // background:
   //   linear-gradient(
   //     to right,
-  //     rgba($primary-color, 0.5),
-  //     rgba($primary-color, 0.9)
+  //     rgba($color-1, 0.5),
+  //     rgba($color-1, 0.9)
   //   ),
   //   url('../img/tk-blue.jpg') center center;
   background-size: cover;
@@ -17,10 +17,10 @@
     font-size: 5rem;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid set-text-color($primary-color);
+    border-bottom: 1px solid set-text-color($color-1);
 
     &--last {
-      color: $secondary-color;
+      color: $color-2;
       font-weight: 700;
     }
   }

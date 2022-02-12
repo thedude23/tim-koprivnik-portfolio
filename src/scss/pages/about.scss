@@ -4,11 +4,11 @@
   &__bio-image {
     height: 50vh;
     width: 100%;
-    // background: 
+    // background:
     //   linear-gradient(
     //     to right,
-    //     rgba($primary-color, 0.9),
-    //     rgba($primary-color, 0.9)
+    //     rgba($color-1, 0.9),
+    //     rgba($color-1, 0.9)
     //   ),
     //   url('../img/tk-blue.jpg') center center;
     background-size: cover;
@@ -41,11 +41,12 @@
     grid-gap: 2rem;
 
     &__job {
-      background: lighten($primary-color, 10%);
+      background: lighten($color-1, 10%);
       padding: 0.5rem;
-      border-bottom: 5px solid $secondary-color;
+      border-bottom: 5px solid $color-2;
 
-      h2, h3 {
+      h2,
+      h3 {
         margin: 0.5rem 0;
       }
       h6 {
@@ -60,9 +61,6 @@
   }
 
   footer {
-    transform:
-      rotate(90deg)
-      translate(-3rem, -5rem);
+    transform: rotate(90deg) translate(-3rem, -5rem);
   }
-  
 }

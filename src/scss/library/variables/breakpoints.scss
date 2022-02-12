@@ -1,4 +1,8 @@
-// * Defined breakpoints
+/* ----- */
+/* Breakpoints */
+/* ----- */
+
+// Defined breakpoints (1st option)
 $breakpoints: (
   'sm': (
     min-width: 576px,
@@ -17,13 +21,14 @@ $breakpoints: (
   ),
 ) !default;
 
+// Defined breakpoints (2nd option)
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
 
-// * Mixin to manage responsive breakpoints (1)
+// Mixin to manage responsive breakpoints (1st option)
 @mixin breakpoint($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
@@ -41,7 +46,7 @@ $xxl: 1400px;
   }
 }
 
-// * Alternative mixin to manage responsive breakpoints (2)
+// Mixin to manage responsive breakpoints (2nd option)
 @mixin breakpoint($point) {
   @if $point == $xxl {
     @media (min-width: $xxl) {

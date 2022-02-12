@@ -1,31 +1,51 @@
-// * Defined typography variables
+/* ----- */
+/* Typography */
+/* ----- */
+
+// Font weights
 $font-weight-thin: 100;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-weight-black: 800;
-$line-height-xxl: 2;
 
-$base-font-size: 1.6rem; // 16px
-$base-line-height: 1.5; // 24px -- absolute line-height. For relative line-height (1.385), see http://cssleading.com/.
+// Line heights
+$line-height: 1.5; // = 150% / 24px
+$line-height-xl: 2;
+$line-height-xxl: 2.5;
+$line-height-sm: 1.1;
+
+// Font sizes
+$font-size: 1.6rem; // 16px
+$font-size-xxl: 4.8rem; // 48px
+$font-size-xl: 3.2rem; // 32px
+$font-size-lg: 2.4rem; // 24px
+$font-size-md: 1.8rem; // 18px
+$font-size-sm: 1.2rem; // 12px
 
 // Font families
-$default-font-family: 'Nunito', sans-serif;
+$font-family: 'Nunito', sans-serif;
+$font-family-alt: 'Inter--Regular', sans-serif;
+
+// Letter spacings
+$letter-spacing-1: 4.75px;
+$letter-spacing-2: 2.7px;
+$letter-spacing-3: 2.35px;
 
 html {
-  font-size: 1.6rem; // 16px
+  font-size: $font-size;
 }
 
 body {
-  // font-family: 'Nunito', sans-serif;
-  font-family: 'Inter--Regular';
-  text-decoration-color: $color-3;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 0.2em;
-  word-break: normal;
+  font-family: $font-family;
   // font-variant-numeric: slashed-zero;
   // font-variant-caps: small-caps;
   // text-align: justify;
+  // text-decoration-color: $color-3;
+  // text-decoration-style: dashed;
+  // text-decoration-thickness: 0.2em;
+  word-break: normal;
+  word-wrap: break-word;
   // writing-mode: vertical-lr;
 }
 
@@ -33,7 +53,10 @@ span {
   font-style: inherit;
 }
 
-/*
+label {
+  font-weight: bold;
+}
+
 p {
   color: $color-1;
   max-width: 45ch;
@@ -46,52 +69,39 @@ p {
   // &::first-line {}
   // &:first-child {}
   // &:last-child {}
-  &:nth-child(even) {
-    color: $color-3;
-  }
+  // &:nth-child(even) {}
   // &:nth-of-type(2)::selection {}
 }
-*/
 
-/*
 h1 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 4.8rem;
-  font-weight: 100;
-  letter-spacing: $letter-spacing-lg;
+  font-family: $font-family-alt;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-thin;
+  letter-spacing: $letter-spacing-1;
   color: $color-3;
   text-shadow: $text-shadow;
   text-transform: lowercase;
   text-decoration: underline; // overline
-  text-underline-offset: $gutter;
-  text-decoration-color: $color-4;
-  padding-bottom: $gutter-lg;
+  text-underline-offset: $gap;
+  text-decoration-color: $color-3;
+  padding-bottom: $gap-double;
 
   // &::first-letter {
   //   color: $color-1;
   //   font-weight: bold;
   //   // line-height: 1;
-  //   // margin-right: $gutter-xs;
-  //   // margin-top: $gutter-xs;
+  //   // margin-right: $gap-xs;
+  //   // margin-top: $gap-xs;
   //   // float: left;
   // }
 }
-*/
 
-/*
 h2 {
   font-size: 3.2rem;
   font-weight: 900;
 }
-*/
 
-/*
 h3 {
   font-size: 2.4rem;
   font-weight: 700;
-}
-*/
-
-label {
-  font-weight: bold;
 }
