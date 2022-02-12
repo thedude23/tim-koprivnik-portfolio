@@ -1,8 +1,11 @@
 @import 'fonts/fonts';
-@import 'variables/colors';
-@import 'variables/effects';
-@import 'variables/constraints';
-@import 'variables/keyframes';
+
 @import 'variables/breakpoints';
+@import 'variables/colors';
+@import 'variables/constraints';
+@import 'variables/effects';
 @import 'variables/typography';
+
+@import 'utilities/keyframes';
+@import 'utilities/mixins';
 @import 'utilities/utilities';

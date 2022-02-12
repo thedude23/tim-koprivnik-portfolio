@@ -2,6 +2,7 @@
 /* Constraints */
 /* ----- */
 
+// Gaps / Spacing
 $gap: 1rem; // 10px
 $gap-quarter: $gap * 0.25; // 2.5px
 $gap-half: $gap * 0.5; // 5px
@@ -11,8 +12,6 @@ $gap-triple: $gap * 3; // 30px
 $gap-quadruple: $gap * 4; // 40px
 $gap-sextuple: $gap * 6; // 60px
 
-$letter-gap: 0.25em;
-$letter-gap-lg: 0.5em;
-
+// Container widths
 $container-width: 114rem; // 1140px
 $container-content-width: 76.8rem; // 768px

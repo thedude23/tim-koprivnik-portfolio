@@ -1,0 +1,117 @@
+/* ----- */
+/* Mixins */
+/* ----- */
+
+// Mixin to manage responsive breakpoints (1st option)
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    // @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Mixin to manage responsive breakpoints (2nd option)
+@mixin breakpoint($point) {
+  @if $point == $xxl {
+    @media (min-width: $xxl) {
+      @content;
+    }
+  } @else if $point == $xl {
+    @media (min-width: $xl) {
+      @content;
+    }
+  } @else if $point == $lg {
+    @media (min-width: $lg) {
+      @content;
+    }
+  } @else if $point == $md {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if $point == $sm {
+    @media (min-width: $sm) {
+      @content;
+    }
+  }
+}
+
+// Calculate rem (root em) units from pixels for font-size and line-height
+@mixin font-size($font-size, $line-height: '') {
+  @if $font-size == 'inherit' {
+    @error 'No inherit values allowed in font-size mixin!';
+  } @else if unit($font-size) == 'rem' {
+    font-size: $font-size;
+  } @else {
+    font-size: ($font-size / $base-font-size) * 1rem;
+  }
+
+  // Handle the line-height
+  @if $line-height != '' {
+    // Check if line-height is in px
+    @if unit($line-height) == 'px' {
+      line-height: ($line-height / $base-font-size) * 1rem;
+    } @else {
+      // Check if line-height is in rem and handle the line-height
+      @if unit($line-height) == 'rem' {
+        line-height: $line-height;
+      }
+      // The line-height is a multiplier
+      @else {
+        $font-size-px: nounit($font-size);
+        $base-font-size-px: nounit($base-font-size);
+
+        // Convert the font-size if it is in rem
+        @if unit($font-size) == 'rem' {
+          $font-size-px: nounit($font-size) * nounit($base-font-size);
+        }
+
+        $conversion: $base-font-size-px *
+          ($font-size-px / $base-font-size-px) *
+          $line-height /
+          $base-font-size-px;
+        line-height: #{$conversion}rem;
+      }
+    }
+  }
+}
+
+// Count content
+@mixin content_count($number_of_items...) {
+  @each $item in $number_of_items {
+    @if type-of($item) == number {
+      @for $i from 1 through $item {
+        &:nth-child(#{$i}):nth-last-child(#{$item - $i + 1}) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+// Transitions
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+/* ----- */
+/* Functions */
+/* ----- */
+
+// Set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}

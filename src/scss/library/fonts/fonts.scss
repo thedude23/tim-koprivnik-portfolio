@@ -1,7 +1,11 @@
-// * Nunito font
+/* ----- */
+/* Fonts */
+/* ----- */
+
+// Nunito font
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800&display=swap');
 
-// * Helsinki font
+// Helsinki font
 @font-face {
   text-rendering: optimizeLegibility;
   font-family: 'Helsinki';
@@ -9,7 +13,7 @@
   src: url('../fonts/helsinki/helsinki.woff') format('woff');
 }
 
-// * Inter font
+// Inter font
 @font-face {
   text-rendering: optimizeLegibility;
   font-family: 'Inter--Regular';
