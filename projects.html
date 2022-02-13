@@ -8,22 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-  <title>Tim Koprivnik Projects</title>
+  <title>Tim Koprivnik's Projects</title>
   <!-- <link rel="icon" 
       type="image/jpg" 
       href="./img/rsz_tk1.jpg"> -->
 </head>
-<body>
+<body class="projects-page">
   <header>
-    <!-- Button with hamburger icon // we use it as a click event (JS) -->
     <div class="menu-btn">
       <span class="menu-btn__burger"></span>
     </div>
 
-    <!-- Navigation -->
     <nav class="nav">
       <ul class="menu-nav">
-        <li class="menu-nav__item">
+        <li class="menu-nav__item active">
           <a href="index.html" class="menu-nav__link">
             Home
           </a>
@@ -33,37 +31,32 @@
             About Me
           </a>
         </li>
-        <li class="menu-nav__item active">
+        <li class="menu-nav__item">
           <a href="projects.html" class="menu-nav__link">
             My Projects
           </a>
         </li>
         <li class="menu-nav__item">
           <a href="contact.html" class="menu-nav__link">
-            Contact/Hire Me
+            Contact Me
           </a>
         </li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main section -->
-  <main>
-    <!-- Projects -->
+  <main class="container">
+    <h1 class="page__title">Projects</h1>
+
     <section class="projects">
-      <div class="projects__bio-image">
-        <div class="projects__bio">
-          <h2 class="text-secondary">MY FREE TIME PROJECTS</h2>
-            <p>For more, check <a href="https://github.com/thedude23" target="blank" class="github-projects-link">my GitHub repositories</a></p>
-            <br>
-        </div>
+      <h2 class="section__title">My free time projects</h2>
+        <p>For more, check <a href="https://github.com/thedude23" target="blank">my GitHub repo</a></p>
       </div>
-      <!-- Project items -->
+
       <div class="projects__items">
         <div class="projects__item">
-          <p>Meme Generator, made in React</p>
-          <br>
-          <img src="img/memegenerator.jpg" alt="My Project">
+          <h4>Meme Generator SPA (React)</h4>
+          <img src="src/images/memegenerator.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/memegenerator/dist/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -75,9 +68,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Website Template (designed in Figma)</p>
-          <br>
-          <img src="img/soundwave.jpg" alt="My Project">
+          <h4>Website template (Figma)</h4>
+          <img src="src/images/soundwave.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/soundwave/index.html" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -89,9 +81,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Speed Typing Game, made in React</p>
-          <br>
-          <img src="img/speedtypinggame.jpg" alt="My Project">
+          <h4>Speed Typing Game SPA (React)</h4>
+          <img src="src/images/speedtypinggame.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="#" target="blank" class="projects__btn" onclick="alert('Coming up.')">
               <i class="fas fa-eye"></i> View
@@ -103,9 +94,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Netflix Starter Page (old)</p>
-          <br>
-          <img src="img/netflixclone.jpg" alt="My Project">
+          <h4>Netflix homepage theme</h4>
+          <img src="src/images/netflixclone.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/netflix-clone/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -117,9 +107,9 @@
         </div>
 
         <div class="projects__item">
-          <p>Pig Game, made in Javascript</p>
+          <h4>Pig Game (vanilla JS)</h4>
           <br>
-          <img src="img/piggame.jpg" alt="My Project">
+          <img src="src/images/piggame.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/PigGame/" target="blank"  class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -131,9 +121,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Website, made in WordPress</p>
-          <br>
-          <img src="img/subsidium.jpg" alt="My Project">
+          <h4>Website (WordPress)</h4>
+          <img src="src/images/subsidium.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://obnovadoma.subsidium.si/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -145,9 +134,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Eccomerce Template</p>
-          <br>
-          <img src="img/ecomm.jpg" alt="My Project">
+          <h4>E-Commerce theme (HTML, SCSS)</h4>
+          <img src="src/images/ecomm.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/ogani/index.html" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -159,9 +147,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Website Template</p>
-          <br>
-          <img src="img/coal.jpg" alt="My Project">
+          <h4>Website theme (HTML, SCSS)</h4>
+          <img src="src/images/coal.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/los-angeles-mountains/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -173,9 +160,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Picsome app, made in React</p>
-          <br>
-          <img src="img/picsome.jpg" alt="My Project">
+          <h4>Picsome SPA (React)</h4>
+          <img src="src/images/picsome.jpg" alt="My Project">
           <div class="projects__btns">
             <a href="#" target="blank" class="projects__btn" onclick="alert('Coming up.')">
               <i class="fas fa-eye"></i> View
@@ -187,9 +173,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Website Template</p>
-          <br>
-          <img src="img/crisp-studio.png" alt="My Project">
+          <h4>Website theme (HTML, SCSS)</h4>
+          <img src="src/images/crisp-studio.png" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/crisp-studio-template/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -201,9 +186,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Shopify Store</p>
-          <br>
-          <img src="img/koibird.png" alt="My Project">
+          <h4>E-Commerce theme (Shopify) </h4>
+          <img src="src/images/koibird.png" alt="My Project">
           <div class="projects__btns">
             <a href="https://koibird-crisp-studio.myshopify.com/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -215,9 +199,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Shopify Store Theme Template</p>
-          <br>
-          <img src="img/allbirds.png" alt="My Project">
+          <h4>E-Commerce theme (Shopify)</h4>
+          <img src="src/images/allbirds.png" alt="My Project">
           <div class="projects__btns">
             <a href="https://thedude23.github.io/allbirds/pages/our-materials-wool.html" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -229,9 +212,8 @@
         </div>
 
         <div class="projects__item">
-          <p>Blog, made in WordPress</p>
-          <br>
-          <img src="img/something-different.png" alt="My Project">
+          <h4>Blog (WordPress)</h4>
+          <img src="src/images/something-different.png" alt="My Project">
           <div class="projects__btns">
             <a href="https://blog-something-different.com/en/" target="blank" class="projects__btn">
               <i class="fas fa-eye"></i> View
@@ -243,9 +225,8 @@
         </div>
 
         <div class="projects__item">
-          <p>WordPress Template</p>
-          <br>
-          <img src="img/backbeach.png" alt="My Project">
+          <h4>Website theme (WordPress)</h4>
+          <img src="src/images/backbeach.png" alt="My Project">
           <div class="projects__btns">
             <a href="#" target="blank" class="projects__btn" onclick="alert('Coming up.')">
               <i class="fas fa-eye"></i> View
@@ -257,9 +238,8 @@
         </div>
 
         <div class="projects__item">
-          <p>WordPress Template</p>
-          <br>
-          <img src="img/westcoast.png" alt="My Project">
+          <h4>Website theme (WordPress)</h4>
+          <img src="src/images/westcoast.png" alt="My Project">
           <div class="projects__btns">
             <a href="#" target="blank" class="projects__btn" onclick="alert('Coming up.')">
               <i class="fas fa-eye"></i> View
@@ -270,30 +250,34 @@
           </div>
         </div>
       </div>
-
-      <!-- Social icons -->
-      <div class="social-icons">
-        <a href="https://twitter.com/TimKoprivnik" target="blank">
-          <i class="fab fa-twitter fa-2x"></i>
-        </a>
-        <a href="https://www.facebook.com/6666x/" target="blank">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://www.instagram.com/tim.koprivnik/" target="blank">
-          <i class="fab fa-instagram fa-2x"></i>
-        </a>
-        <a href="https://github.com/thedude23" target="blank">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/tim-koprivnik-0238b4147/" target="blank">
-          <i class="fab fa-linkedin-in fa-2x"></i>
-        </a>
-      </div>
-
-      <!-- Footer -->
-      <footer>&copy; Copyright 2020</footer>
     </section>
   </main>
+
+  <footer>
+    <section class="social-icons">
+      <a href="https://twitter.com/TimKoprivnik" target="blank">
+        <i class="fab fa-twitter fa-2x"></i>
+      </a>
+
+      <a href="https://www.facebook.com/tix00" target="blank">
+        <i class="fab fa-facebook fa-2x"></i>
+      </a>
+
+      <a href="https://www.instagram.com/tim.koprivnik/" target="blank">
+        <i class="fab fa-instagram fa-2x"></i>
+      </a>
+      
+      <a href="https://github.com/thedude23" target="blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/tim-koprivnik-0238b4147/" target="blank">
+        <i class="fab fa-linkedin-in fa-2x"></i>
+      </a>
+    </section>
+
+    <div class="copyright">&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script></div>
+  </footer>
 
   <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
   <script src="dist/js/bundle.min.js"></script>

@@ -1,0 +1,53 @@
+/* ----- */
+/* Footer */
+/* ----- */
+
+footer {
+  bottom: $gap;
+  font-size: $font-size-sm;
+  position: fixed;
+  right: $gap;
+  text-align: right;
+
+  .social-icons {
+    bottom: $gap;
+    left: $gap;
+    position: fixed;
+
+    a {
+      text-decoration: none;
+      @include transition-ease;
+
+      &:not(:last-of-type) {
+        padding: 0 $gap-half;
+      }
+
+      &:hover {
+        color: $color-link--hover;
+      }
+
+      i {
+        font-size: $font-size;
+
+        @include breakpoint(md) {
+          font-size: $font-size-lg;
+        }
+      }
+    }
+  }
+}
+
+.about,
+.projects,
+.contact {
+  footer {
+    transform: rotate(90deg) translate(-4.25rem, -3rem);
+    position: fixed;
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

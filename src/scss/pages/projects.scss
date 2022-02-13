@@ -1,123 +1,93 @@
+/* ----- */
+/* Projects specific styling */
+/* ----- */
+
 .projects {
-  padding-bottom: 2rem;
-
-  &__bio-image {
-    height: 50vh;
-    width: 100%;
-    // background:
-    // linear-gradient(
-    //   to right,
-    //   rgba($color-1, 0.9),
-    //   rgba($color-1, 0.9)
-    // ),
-    // url('../img/tk-blue.jpg') center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  &__bio {
-    width: 60vw; // 60%
-    text-align: center;
-
-    .text-secondary {
-      padding-bottom: 1rem;
-      font-size: 2rem;
-    }
-
-    p {
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-
-    .github-projects-link {
-      border-bottom: 1px solid $color-2;
-      // padding: 5px;
-    }
-
-    .github-projects-link:hover {
-      color: $color-2;
-      border-bottom: 1px solid white;
-    }
-  }
-
   &__items {
-    width: 60vw;
-    margin: 2rem auto 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    @include grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: $section-padding;
   }
 
   &__item {
+    @include card;
     position: relative;
-    border-bottom: 5px solid $color-2;
     overflow: hidden;
-    cursor: pointer;
-    // width: 240px;
-    // height: 200px;
+    min-height: 200px;
 
-    img {
-      width: 100%;
-      height: 100%;
+    h4 {
+      padding: 0;
+      font-size: $font-size-sm;
     }
 
-    // setting the stage for when we hover over the item
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 120px;
+      width: 100%;
+    }
+
+    // Setting the stage for when we hover over the item
     &::after {
+      background-color: $color-1;
       content: '';
       position: absolute;
       top: 100%;
       left: 0;
       height: 100%;
-      width: 100%;
-      background: $color-2;
       opacity: 0;
+      width: 100%;
       @include transition-ease;
     }
 
-    // when we hover over the item
+    // When we hover over the item
     &:hover {
+      cursor: pointer;
+
+      p,
+      img {
+        display: none;
+      }
+
       &::after {
         top: 0;
-        opacity: 0.9;
+        opacity: 1;
+        z-index: 1;
       }
-      // for buttons to show up
+      // For buttons to show up
       .projects__btn {
         opacity: 1;
       }
     }
+
+    &:focus {
+      cursor: pointer;
+    }
   }
 
   &__btns {
+    @include flex;
+    justify-content: center;
+    content: '';
     position: absolute;
     top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    z-index: 2;
+    opacity: 1;
+
     align-items: center;
     text-align: center;
   }
 
   &__btn {
-    opacity: 0;
-    color: set-text-color($color-2);
+    opacity: 0; // Initially invisible
     @include transition-ease;
 
     &:hover {
-      color: set-text-color(set-text-color($color-2));
+      color: $color-link--hover;
     }
-  }
-
-  .social-icons {
-    display: flex;
-    flex-direction: column;
-  }
-
-  footer {
-    transform: rotate(90deg) translate(-3rem, -5rem);
   }
 }

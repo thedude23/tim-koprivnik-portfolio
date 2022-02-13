@@ -4,26 +4,20 @@
 
 .flex {
   display: flex;
-  gap: $gap;
+  gap: $gap-double;
 }
 
 .grid {
   display: grid;
-  gap: $gap;
+  gap: $gap-double;
 }
 
 .container {
-  // align-items: center;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-
   // margin: 0 auto; // More modern way: margin-inline: auto;
   margin-left: auto;
   margin-right: auto;
-  max-width: $container-content-width;
-  // padding: 0 $gap;
-  padding: 0 2em; // More modern way: padding-inline: 2em;
+  max-width: $container-width;
+  padding: 0 $gap-quadruple; // More modern way: padding-inline: 2em;
 }
 
 // Screen reader only

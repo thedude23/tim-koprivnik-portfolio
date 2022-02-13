@@ -1,38 +1,16 @@
-.contact {
-  height: 100%;
-  padding-top: 40vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // background:
-  //   linear-gradient(
-  //     to right,
-  //     rgba($color-1, 0.9),
-  //     rgba($color-1, 0.5)
-  //   ),
-  //   url('../img/tk-blue.jpg') center center;
-  background-size: cover;
+/* ----- */
+/* Contact page specific styling */
+/* ----- */
 
-  h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.contact {
+  @include center-element;
+  @include card;
+
+  .section__title {
+    text-align: center;
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
-    font-size: 1.5rem;
-  }
-
-  .contact__list {
-    display: flex;
-    // justify-content: space-around;
-  }
-
-  .social-icons {
-    position: initial; // = static
-    margin-top: 2rem;
+    @include flex;
   }
 }

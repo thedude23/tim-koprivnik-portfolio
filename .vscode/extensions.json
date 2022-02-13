@@ -33,7 +33,6 @@
     "yzane.markdown-pdf",
     "pkief.material-icon-theme",
     "christian-kohler.path-intellisense",
-    "felixfbecker.php-debug",
     "bmewburn.vscode-intelephense-client",
     "mehedidracula.php-namespace-resolver",
     "pnp.polacode",
@@ -46,7 +45,6 @@
     "pflannery.vscode-versionlens",
     "mblode.twig-language-2",
     "ms-edgedevtools.vscode-edge-devtools",
-    "ms-vscode-remote.remote-containers",
-    "felixfbecker.php-pack"
+    "ms-vscode-remote.remote-containers"
   ]
 }

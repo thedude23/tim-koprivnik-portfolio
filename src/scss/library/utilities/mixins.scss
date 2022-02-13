@@ -123,40 +123,48 @@
 }
 
 // Container
-@mixin container(
-  $container-max-width: $container-width,
-  $outer-container-break: $md,
-  $v-margin: 0,
-  $v-padding: 0,
-  $v-padding-large: 0,
-  $h-padding: 0,
-  $h-padding-large: $h-padding
-) {
-  margin: #{$v-margin} auto;
-  max-width: #{$container-max-width};
-  padding: #{$v-padding} #{$h-padding};
-  width: 100%;
+// @mixin container(
+//   $container-max-width: $container-width,
+//   $outer-container-break: $md,
+//   $v-margin: 0,
+//   $v-padding: 0,
+//   $v-padding-large: 0,
+//   $h-padding: 0,
+//   $h-padding-large: $h-padding
+// ) {
+//   margin: #{$v-margin} auto;
+//   max-width: #{$container-max-width};
+//   padding: #{$v-padding} #{$h-padding};
+//   width: 100%;
 
-  @include breakpoint($outer-container-break) {
-    padding: #{$v-padding-large} #{$h-padding-large};
-  }
+//   @include breakpoint($outer-container-break) {
+//     padding: #{$v-padding-large} #{$h-padding-large};
+//   }
 
-  @include breakpoint($container-max-width) {
-    padding-left: calc(
-      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
-    );
-    padding-right: calc(
-      #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
-    );
-  }
+//   @include breakpoint($container-max-width) {
+//     padding-left: calc(
+//       #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+//     );
+//     padding-right: calc(
+//       #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
+//     );
+//   }
+// }
+
+@mixin container {
+  // margin: 0 auto; // More modern way: margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-width;
+  padding: 0 $gap; // More modern way: padding-inline: 2em;
 }
 
 // Breakout -- for elements that should be edge-to-edge even when a parent container uses the wrapper mixin
 @mixin breakout($h-padding: $gap-double) {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  padding-left: calc(#{$h-padding} + calc(-50vw + 50%)); //
-  padding-right: calc(#{$h-padding} + calc(-50vw + 50%)); //
+  // padding-left: calc(#{$h-padding} + calc(-50vw + 50%)); //
+  // padding-right: calc(#{$h-padding} + calc(-50vw + 50%)); //
 }
 @mixin breakout-alt() {
   width: 100vw;
@@ -308,14 +316,6 @@
   word-break: break-word;
 }
 
-// Reset button styles
-@mixin button-reset() {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
 // Links
 @mixin link($color: $color-link, $color-hover: $color-link--hover) {
   color: $color;
@@ -328,6 +328,62 @@
   &:focus,
   &:hover {
     color: $color-hover;
+  }
+}
+
+// Reset button styles
+@mixin button-reset() {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+// Center element
+@mixin center-element() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Card
+@mixin card {
+  border: $border-default;
+  padding: $gap-double;
+}
+
+// Flex
+@mixin flex {
+  display: flex;
+  gap: $gap-double;
+}
+
+// Grid
+@mixin grid {
+  display: grid;
+  gap: $gap-double;
+  grid-template-rows: auto;
+}
+
+// Circle
+@mixin circle {
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: $color-3;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 750ms ease-in-out;
+
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
+      transform: scale(1.5);
+    }
   }
 }
 

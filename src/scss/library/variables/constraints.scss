@@ -14,8 +14,16 @@ $gap-fivetuple: $gap * 5; // 50px
 $gap-sextuple: $gap * 6; // 60px
 
 // Container widths
-$container-width: 114rem; // 1140px
-$container-content-width: 76.8rem; // 768px
+$container-width: 80rem; // 800px
+
+// Header height
+$header-height: 5rem; // 50px
+
+// Main content padding
+$main-content-top-padding: 10rem;
+
+// Section padding
+$section-padding: $gap-double;
 
 // Button size
 $button-icon-size: 1.25rem;

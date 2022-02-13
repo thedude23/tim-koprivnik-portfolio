@@ -7,28 +7,28 @@
   visibility: hidden !important;
 }
 
-:empty {
-  display: none;
-}
+// :empty {
+//   display: none;
+// }
 
 ::selection {
-  background-color: $color-2;
-  color: $color-1;
+  background-color: $color-4;
+  color: $color-3;
 }
 
 // Forms
-:checked {
-  box-shadow: 0px 0px 5px 2px green;
-}
+// :checked {
+//   box-shadow: 0px 0px 5px 2px green;
+// }
 
-:indeterminate {
-  box-shadow: 0px 0px 5px 2px orange;
-}
+// :indeterminate {
+//   box-shadow: 0px 0px 5px 2px orange;
+// }
 
-:required {
-  box-shadow: 0px 0px 5px 2px red;
-}
+// :required {
+//   box-shadow: 0px 0px 5px 2px red;
+// }
 
-:optional {
-  box-shadow: 0px 0px 5px 2px blue;
-}
+// :optional {
+//   box-shadow: 0px 0px 5px 2px blue;
+// }

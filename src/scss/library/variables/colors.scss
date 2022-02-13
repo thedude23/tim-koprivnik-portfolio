@@ -4,21 +4,17 @@
 
 // Text and background colors
 $color-1: rgba(12, 14, 24, 1);
-$color-2: rgba(210, 216, 249, 1);
+$color-2: rgba(249, 248, 210, 0.801);
 $color-3: rgba(255, 255, 255, 1);
+$color-4: #c75161;
 
-$color-blue-mint: #daf0f8;
-$color-blue-mist: #8db9ca;
-$color-blue-medium: #008dbd;
-$color-blue-teal: #22bcb9;
-$color-blue-cerulean: #007fac;
-$color-yellow-light: #fbf7eb;
-$color-green-light: #ebfbf3;
-$color-accessible-mist: #41778c;
+$color-body-bg: $color-1;
+$color-text: $color-3;
 
 // Links
 $color-link: $color-2;
-$color-link--hover: $color-accessible-mist;
+$color-link--hover: $color-4;
 
-// Border colors
+// Borders
 $color-border: $color-2;
+$color-border--hover: $color-4;

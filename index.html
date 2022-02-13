@@ -8,19 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-  <title>Tim Koprivnik Portfolio</title>
+  <title>Tim Koprivnik's Portfolio</title>
   <!-- <link rel="icon" 
       type="image/jpg" 
       href="./img/rsz_tk1.jpg"> -->
 </head>
-<body>
+<body class="home-page">
   <header>
-    <!-- Button with hamburger icon // we use it as a click event (JS) -->
     <div class="menu-btn">
       <span class="menu-btn__burger"></span>
     </div>
 
-    <!-- Navigation -->
     <nav class="nav">
       <ul class="menu-nav">
         <li class="menu-nav__item active">
@@ -46,41 +44,44 @@
       </ul>
     </nav>
   </header>
-  
-  <!-- Main section -->
-  <main>
-    <section class="home">
-      <h2>Hi! My Name Is</h2>
-      <h1 class="home__name">
-        <span class="home__name-first">Tim</span> <span class="home__name--last">Koprivnik</span>
-      </h1>
-      <h2>
-        Web Developer, Designer, Technical Customer Support Specialist, and Content Writer/Editor
+
+  <main class="container">
+    <section class="hero">
+      <h3 class="hero__intro">Hello fellow apes!</h3>
+      <h1 class="hero__title">Tim Koprivnik</h1>
+      <h2 class="hero__subtitle">
+        <span>Developer.</span>
+        <span>Thinker.</span>
+        <span>Sportsman.</span>
+        <span>Indie enthusiast.</span>
+        <span>Psychology nerd.</span>
+        <span>Advocate against modern way of living.</span>
+        <span>Fellow human.</span>
       </h2>
-
-      <!-- Social icons -->
-      <div class="social-icons">
-        <a href="https://twitter.com/TimKoprivnik" target="blank">
-          <i class="fab fa-twitter fa-2x fab-size"></i>
-        </a>
-        <a href="https://www.facebook.com/6666x/" target="blank">
-          <i class="fab fa-facebook fa-2x"></i>
-        </a>
-        <a href="https://www.instagram.com/tim.koprivnik/" target="blank">
-          <i class="fab fa-instagram fa-2x"></i>
-        </a>
-        <a href="https://github.com/thedude23" target="blank">
-          <i class="fab fa-github fa-2x"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/tim-koprivnik-0238b4147/" target="blank">
-          <i class="fab fa-linkedin-in fa-2x"></i>
-        </a>
-      </div>
-
-      <!-- Footer -->
-      <footer>&copy; Copyright 2020</footer>
     </section>
   </main>
+
+  <footer>
+    <section class="social-icons">
+      <a href="https://twitter.com/TimKoprivnik" target="blank">
+        <i class="fab fa-twitter fa-2x fab-size"></i>
+      </a>
+      <a href="https://www.facebook.com/tix00" target="blank">
+        <i class="fab fa-facebook fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com/tim.koprivnik/" target="blank">
+        <i class="fab fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://github.com/thedude23" target="blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tim-koprivnik-0238b4147/" target="blank">
+        <i class="fab fa-linkedin-in fa-2x"></i>
+      </a>
+    </section>
+
+    <div class="copyright">&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear());</script></div>
+  </footer>
 
   <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
   <script src="dist/js/bundle.min.js"></script>

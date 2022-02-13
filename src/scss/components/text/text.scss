@@ -1,6 +1,9 @@
+/* ----- */
+/* Text */
+/* ----- */
+
 body {
-  background-color: $color-1;
-  color: $color-3;
+  color: $color-text;
   font-family: $font-family;
   font-size: $font-size;
   // font-variant-numeric: slashed-zero;
@@ -19,17 +22,16 @@ span {
 }
 
 label {
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 p {
-  color: $color-3;
-  max-width: 45ch;
-  text-overflow: ellipsis;
+  color: $color-text;
+  // max-width: 45ch;
   overflow: hidden;
-  white-space: nowrap;
-  word-spacing: normal; // = 0
+  text-overflow: ellipsis;
   // text-indent: 2em;
+  word-spacing: normal; // = 0
 
   // &::first-line {}
   // &:first-child {}
@@ -48,16 +50,19 @@ h6 {
   font-family: $font-family-alt;
   font-weight: $font-weight-thin;
   letter-spacing: $letter-spacing-1;
-  padding-bottom: $gap-double;
+  padding: $gap-double 0;
 }
 
 h1 {
-  font-size: $font-size-lg;
+  background: $color-4;
+  border: $border-default;
+  font-size: $font-size-xl;
+  padding: $gap-double 0;
   // text-shadow: $text-shadow;
   // text-transform: lowercase;
-  text-decoration: underline; // overline
-  text-underline-offset: $gap;
-  text-decoration-color: $color-2;
+  // text-decoration: underline; // overline
+  // text-underline-offset: $gap;
+  // text-decoration-color: $color-2;
 
   @include breakpoint(md) {
     font-size: $font-size-xl;
@@ -67,10 +72,7 @@ h1 {
     font-size: $font-size-xxl;
   }
 
-  &::first-letter {
-    color: $color-3;
-    font-weight: $font-weight-bold;
-  }
+  // &::first-letter {}
 }
 
 h2 {

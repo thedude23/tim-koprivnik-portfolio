@@ -1,14 +1,26 @@
-::marker {
-  color: hotpink;
-  // content: '\2212'' '; /* Minus symbol with space */
-  content: '~';
-}
+/* ----- */
+/* Lists */
+/* ----- */
+
+// ::marker {
+//   color: $color-4;
+//   // content: '\2212'' '; /* Minus symbol with space */
+//   content: '~';
+// }
 
 ul,
 ol {
-  &::marker {
-    font-size: 1.5rem;
-  }
+  // &::marker {
+  //   font-size: 1.5rem;
+  // }
+
+  margin-top: 0;
+  margin-bottom: $gap-double;
+  padding-left: $gap-double;
+}
+
+nav ul {
+  list-style: none;
 }
 
 /*

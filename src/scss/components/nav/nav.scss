@@ -1,127 +1,154 @@
-// Navigation for mobile (hamburger icon)
+/* ----- */
+/* Hamburger */
+/* ----- */
+
 .menu-btn {
-  // changing background of menu
-  position: absolute;
-  z-index: 1;
-  right: 1rem;
-  top: 1rem;
-  height: 20px;
-  width: 28px;
   cursor: pointer;
+  height: 20px;
+  position: absolute;
+  right: $gap-double;
+  top: $gap-double;
+  z-index: 1;
+  width: 28px;
   @include transition-ease;
 
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  // Middle line of hamburger icon
   &__burger {
-    // adding middle line/bar of hamburger icon
+    background: $color-2;
+    height: 3px;
     position: absolute;
     right: 0;
-    top: 0.5rem;
+    top: $gap-half;
     width: 28px;
-    height: 3px;
-    background: set-text-color($color-1);
     @include transition-ease;
 
+    // Top line of hamburger icon
     &::before {
-      // adding top line of hamburger icon
+      background: $color-2;
       content: '';
+      height: 3px;
       position: absolute;
       top: -8px;
       width: 28px;
-      height: 3px;
-      background: set-text-color($color-1);
       @include transition-ease;
     }
 
+    // Bottom line of hamburger icon
     &::after {
-      // adding bottom line of hamburger icon
+      background: $color-2;
       content: '';
-      position: absolute;
-      top: 8px;
-      width: 28px;
       height: 3px;
-      background: set-text-color($color-1);
+      top: 8px;
+      position: absolute;
+      width: 28px;
       @include transition-ease;
     }
 
-    // *** We add these classes with Javascript (main.js) ***
+    // We add these classes with JS
     &.open {
-      // adding rotation to two lines of hamburger icon and hiding third/middle line of hamburger icon
-      transform: rotate(720deg);
+      // Adding rotation to two lines of hamburger icon and hiding third/middle line of hamburger icon
       background: transparent;
+      transform: rotate(720deg);
 
       &::before {
-        // changing top line of hamburger icon to get to X icon
+        // Changing top line of hamburger icon to get to X icon
         transform: rotate(45deg) translate(5px, 8px);
       }
 
       &::after {
-        // changing bottom line of hamburger icon to get to X icon
-        // width: 28px;
+        // Changing bottom line of hamburger icon to get to X icon
         transform: rotate(-45deg) translate(3px, -7px);
       }
     }
   }
 }
 
-// Navigation
+/* ----- */
+/* Navigation */
+/* ----- */
+
 .nav {
-  position: fixed;
-  top: 0;
   left: 0;
-  width: 100vw;
   opacity: 0.99;
-  visibility: hidden;
+  position: fixed;
+  top: -$gap-double; // Needed fix (#1)
+  visibility: hidden; // Initially hidden on mobile and tablet
+  width: 100vw;
+
+  @include breakpoint(lg) {
+    visibility: visible; // Initially visible on desktop
+    margin-bottom: 0;
+    padding: 0 $gap;
+  }
 
   &.open {
-    visibility: visible;
+    visibility: visible; // Visible on mobile and tablet by click on hamburger icon
   }
 
   .menu-nav {
-    display: flex;
-    flex-flow: column wrap;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
     background: $color-1;
-    list-style-type: none;
-    padding-right: 1rem;
-    transform: translateY(-100%); // so that menu comes from top ...
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    margin-top: $gap-double; // Needed fix (#2)
+    transform: translateY(-100%); // So that menu comes from top ...
     @include transition-ease;
+
+    @include breakpoint(lg) {
+      display: block;
+      transform: translateY(0);
+      height: 100%;
+      background: transparent;
+      text-align: right;
+    }
 
     &.open {
       transform: translateY(0); // ... to initial position
     }
 
     &__item {
-      transform: translateX(100vw); // so that menu items come from right ...
+      transform: translateX(100vw); // So that menu items come from right ...
       @include transition-ease;
+
+      @include breakpoint(lg) {
+        display: inline;
+        padding-right: 1.5rem;
+      }
 
       &.open {
         transform: translateX(0); // ... to initial position
       }
 
       &.active > a {
-        color: $color-2;
+        color: $color-4;
       }
     }
 
     &__link {
       display: inline-block;
-      font-size: 1rem !important;
+      font-weight: $font-weight-bold;
+      padding: $gap-double 0;
       text-transform: uppercase;
-      padding: 2rem 0;
-      font-weight: 300;
       @include transition-ease;
 
       &:hover {
-        color: $color-2;
+        color: $color-link--hover;
       }
     }
   }
 }
 
 @for $i from 1 through 4 {
-  // 4, because there are 4 links
+  // 4 because there are 4 links
   .menu-nav__item:nth-child(#{$i}) {
     transition-delay: ($i * 0.1s) + 0.15s;
   }

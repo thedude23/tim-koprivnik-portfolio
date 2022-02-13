@@ -8,6 +8,7 @@ $image-shadow: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 
 // Border
 $border-default: 1px solid $color-border;
+$border-default--hover: 1px solid $color-border--hover;
 
 // Transitions / transformations (https://web.dev/learn/css/transitions/)
 $circle: circle(50%);
