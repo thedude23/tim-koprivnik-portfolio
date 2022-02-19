@@ -1,10 +1,10 @@
-# TIX
+# Tim Koprivnik
 
-Tim Koprivnik's project.
+Portfolio.
 
 ## Introduction
 
-This is Tim Koprivnik's project, named "TIX". It is based on the custom theme he made by himself. Style follows the [BEM methodology](http://getbem.com/) and Javascript is written as ES6. The JS and SCSS files are compiled and minified with webpack.
+This is Tim Koprivnik's personal project. Style follows the [BEM methodology](http://getbem.com/) and Javascript is written as ES6. The JS and SCSS files are compiled and minified with webpack.
 
 ## Requirements
 
@@ -12,7 +12,7 @@ Requirements for developing:
 
 - [NodeJS](https://nodejs.org/en/)
 - [NPM](https://npmjs.com/)
-  - Version: <= 12
+  - version: <= 12
 
 ## Commands
 
