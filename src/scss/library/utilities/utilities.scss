@@ -10,6 +10,7 @@
 .grid {
   display: grid;
   gap: $gap-double;
+  grid-template-rows: auto;
 }
 
 .container {
@@ -17,7 +18,7 @@
   margin-left: auto;
   margin-right: auto;
   max-width: $container-width;
-  padding: 0 $gap-quadruple; // More modern way: padding-inline: 2em;
+  padding: 0 $gap-double; // More modern way: padding-inline: 2em;
 }
 
 // Screen reader only
@@ -207,7 +208,7 @@
   }
 
   &::after {
-    background: hotpink;
+    background: $color-4;
     mix-blend-mode: multiply;
   }
 
@@ -239,7 +240,7 @@
 .pulser {
   width: 30px;
   height: 30px;
-  background: rebeccapurple;
+  background: $color-4;
   border-radius: 50%;
   position: relative;
 
@@ -250,7 +251,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: blueviolet;
+    background: $color-4;
     border-radius: 50%;
     z-index: -1;
 
@@ -261,7 +262,7 @@
 .grower {
   width: 200px;
   height: 80px;
-  background: lightseagreen;
+  background: $color-4;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -275,7 +276,7 @@
 .mover {
   width: 50px;
   height: 50px;
-  background: royalblue;
+  background: $color-4;
 
   animation: move;
   animation-duration: 2s;

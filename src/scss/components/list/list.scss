@@ -2,34 +2,24 @@
 /* Lists */
 /* ----- */
 
-// ::marker {
-//   color: $color-4;
-//   // content: '\2212'' '; /* Minus symbol with space */
-//   content: '~';
-// }
-
 ul,
 ol {
-  // &::marker {
-  //   font-size: 1.5rem;
-  // }
-
   margin-top: 0;
   margin-bottom: $gap-double;
   padding-left: $gap-double;
+
+  li {
+    &::marker {
+      color: $color-4;
+      // content: '👉 ';
+      // content: counter(list-item) '› ';
+      content: '› ';
+      font-size: 1.5rem;
+      padding-left: $gap-double;
+    }
+  }
 }
 
 nav ul {
   list-style: none;
 }
-
-/*
-h1 {
-  display: list-item;
-  margin-left: 3rem;
-
-  &::marker {
-    content: "🥕";
-  }
-}
-*/

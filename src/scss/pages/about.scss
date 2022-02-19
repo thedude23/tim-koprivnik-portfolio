@@ -9,7 +9,6 @@
 
   &__job {
     @include card;
-    // background: lighten($color-1, 10%);
     background-color: transparent;
 
     h4 {

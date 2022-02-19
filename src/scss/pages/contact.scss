@@ -12,5 +12,10 @@
 
   &__list {
     @include flex;
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
   }
 }

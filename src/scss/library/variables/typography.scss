@@ -18,8 +18,8 @@ $font-size-md: 1.8rem; // 18px
 $font-size-sm: 1.2rem; // 12px
 
 // Font families
-$font-family: 'Nunito', sans-serif;
-$font-family-alt: 'Inter--Regular', sans-serif;
+$font-family: 'Zen Kaku Gothic Antique', sans-serif; // 'Nunito', sans-serif;
+$font-family-alt: 'Helsinki', sans-serif;
 
 // Line heights
 $line-height: 1.5; // = 150% / 24px
@@ -39,5 +39,5 @@ $paragraph-margin-bottom: $gap;
 // Other (https://web.dev/learn/css/typography/)
 $writing-mode: vertical-lr;
 $text-orientation: upright;
-$text-shadow: 1px 1px 2px #f01c, 1px -1px 2px #f0cc, -1px 1px 2px #f0fc,
-  -1px -1px 2px #f0fc, 0 0 16px #f0fa, 0 0 64px #f0fd;
+$text-shadow: 1px 1px 2px $color-4, 1px -1px 2px $color-3, -1px 1px 2px $color-2,
+  -1px -1px 2px $color-1, 0 0 16px $color-1, 0 0 64px $color-1;

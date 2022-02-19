@@ -8,6 +8,8 @@ body {
 }
 
 main {
+  @include container;
+
   padding-bottom: $main-content-top-padding !important;
   padding-top: $main-content-top-padding !important;
 

@@ -5,19 +5,13 @@
 // Nunito font
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800&display=swap');
 
+// Zen Kaku Gothic Antique font
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap');
+
 // Helsinki font
 @font-face {
   text-rendering: optimizeLegibility;
   font-family: 'Helsinki';
   font-weight: normal; // = 400
   src: url('../fonts/helsinki/helsinki.woff') format('woff');
-}
-
-// Inter font
-@font-face {
-  text-rendering: optimizeLegibility;
-  font-family: 'Inter--Regular';
-  font-weight: normal; // = 400
-  font-style: normal;
-  src: url('../fonts/inter/static/Inter-Regular.ttf') format('truetype');
 }

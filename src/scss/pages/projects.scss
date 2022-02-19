@@ -15,19 +15,6 @@
     overflow: hidden;
     min-height: 200px;
 
-    h4 {
-      padding: 0;
-      font-size: $font-size-sm;
-    }
-
-    img {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 120px;
-      width: 100%;
-    }
-
     // Setting the stage for when we hover over the item
     &::after {
       background-color: $color-1;
@@ -43,43 +30,51 @@
 
     // When we hover over the item
     &:hover {
-      cursor: pointer;
-
       p,
       img {
         display: none;
       }
 
-      &::after {
-        top: 0;
-        opacity: 1;
-        z-index: 1;
-      }
+      // &::after {
+      //   top: 0;
+      //   opacity: 1;
+      //   z-index: 1;
+      // }
+
       // For buttons to show up
       .projects__btn {
         opacity: 1;
       }
     }
+  }
 
-    &:focus {
-      cursor: pointer;
-    }
+  h4 {
+    padding: 0;
+    font-size: $font-size-sm;
+    font-family: $font-family;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
   }
 
   &__btns {
     @include flex;
+    align-items: center;
+    text-align: center;
     justify-content: center;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
-    z-index: 2;
     opacity: 1;
-
-    align-items: center;
-    text-align: center;
+    width: 100%;
+    // z-index: 1;
   }
 
   &__btn {

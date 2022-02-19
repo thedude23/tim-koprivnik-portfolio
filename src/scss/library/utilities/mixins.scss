@@ -97,22 +97,6 @@
   }
 }
 
-// Max-width
-@mixin max-width {
-  @include breakpoint($container-width) {
-    @content;
-  }
-}
-
-// Transition
-@mixin transition($transition-property, $transition-time, $method) {
-  -webkit-transition: $transition-property $transition-time $method;
-  -moz-transition: $transition-property $transition-time $method;
-  -ms-transition: $transition-property $transition-time $method;
-  -o-transition: $transition-property $transition-time $method;
-  transition: $transition-property $transition-time $method;
-}
-
 // Clearfix
 @mixin clearfix {
   &::after {
@@ -122,50 +106,22 @@
   }
 }
 
-// Container
-// @mixin container(
-//   $container-max-width: $container-width,
-//   $outer-container-break: $md,
-//   $v-margin: 0,
-//   $v-padding: 0,
-//   $v-padding-large: 0,
-//   $h-padding: 0,
-//   $h-padding-large: $h-padding
-// ) {
-//   margin: #{$v-margin} auto;
-//   max-width: #{$container-max-width};
-//   padding: #{$v-padding} #{$h-padding};
-//   width: 100%;
-
-//   @include breakpoint($outer-container-break) {
-//     padding: #{$v-padding-large} #{$h-padding-large};
-//   }
-
-//   @include breakpoint($container-max-width) {
-//     padding-left: calc(
-//       #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
-//     );
-//     padding-right: calc(
-//       #{$h-padding-large} + calc(-50vw + calc(#{$container-max-width} / 2))
-//     );
-//   }
-// }
-
 @mixin container {
   // margin: 0 auto; // More modern way: margin-inline: auto;
   margin-left: auto;
   margin-right: auto;
   max-width: $container-width;
-  padding: 0 $gap; // More modern way: padding-inline: 2em;
+  padding: 0 $gap-double; // More modern way: padding-inline: $gap;
 }
 
 // Breakout -- for elements that should be edge-to-edge even when a parent container uses the wrapper mixin
 @mixin breakout($h-padding: $gap-double) {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  // padding-left: calc(#{$h-padding} + calc(-50vw + 50%)); //
-  // padding-right: calc(#{$h-padding} + calc(-50vw + 50%)); //
+  // padding-left: calc(#{$h-padding} + calc(-50vw + 50%));
+  // padding-right: calc(#{$h-padding} + calc(-50vw + 50%));
 }
+
 @mixin breakout-alt() {
   width: 100vw;
   position: relative;
@@ -174,6 +130,7 @@
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
 @mixin breakout-alt-2() {
   position: relative;
 }
@@ -191,119 +148,31 @@
   z-index: -1;
 }
 
-// Headings
-@mixin heading-1(
-  $font-family: $font-family-alt,
-  $font-size: $font-size-lg,
-  $line-height: $line-height,
-  $color: $color-2,
-  $color-link: inherit,
-  $color-link-hover: inherit,
-  $font-weight: $font-weight-thin,
-  $margin: $heading-margin-default
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-  font-size: #{$h1-font-size};
-  line-height: #{$line-height};
-  margin: #{$margin};
-  width: auto;
-
-  @include breakpoint($md) {
-    font-size: $font-size-xl;
-  }
-
-  @include breakpoint($lg) {
-    font-size: $font-size-xxl;
-  }
-
-  &__link {
-    color: $color-link;
-
-    &:hover {
-      color: $color-link-hover;
-    }
+// Max-width
+@mixin max-width {
+  @include breakpoint($container-width) {
+    @content;
   }
 }
 
-@mixin heading-2(
-  $font-family: $font-family-alt,
-  $font-size: $font-size-md,
-  $line-height: $line-height,
-  $color: $color-2,
-  $color-link: inherit,
-  $color-link-hover: inherit,
-  $font-weight: $font-weight-thin,
-  $margin: $heading-margin-default
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-  font-size: #{$h1-font-size};
-  line-height: #{$line-height};
-  margin: #{$margin};
-  width: auto;
-
-  @include breakpoint($md) {
-    font-size: $font-size-lg;
-  }
-
-  @include breakpoint($lg) {
-    font-size: $font-size-xl;
-  }
-
-  &__link {
-    color: $color-link;
-
-    &:hover {
-      color: $color-link-hover;
-    }
-  }
+// Transition
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
 }
 
-@mixin heading-3(
-  $font-family: $font-family-alt,
-  $font-size: $font-size,
-  $line-height: $line-height,
-  $color: $color-2,
-  $color-link: inherit,
-  $color-link-hover: inherit,
-  $font-weight: $font-weight-thin,
-  $margin: $heading-margin-default
-) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-  font-size: #{$h1-font-size};
-  line-height: #{$line-height};
-  margin: #{$margin};
-  width: auto;
-
-  @include breakpoint($md) {
-    font-size: $font-size-md;
-  }
-
-  @include breakpoint($lg) {
-    font-size: $font-size-lg;
-  }
-
-  &__link {
-    color: $color-link;
-
-    &:hover {
-      color: $color-link-hover;
-    }
-  }
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
 }
 
 // Standard margin
 @mixin margin($margin-bottom: $gap) {
   margin-bottom: $margin-bottom;
 }
+
 @mixin no-bottom {
   margin-bottom: 0;
 }
@@ -314,29 +183,6 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
-}
-
-// Links
-@mixin link($color: $color-link, $color-hover: $color-link--hover) {
-  color: $color;
-  cursor: pointer;
-  text-decoration: none;
-
-  @include transition(all, 0.2s, ease-in);
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: $color-hover;
-  }
-}
-
-// Reset button styles
-@mixin button-reset() {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
 }
 
 // Center element
@@ -366,6 +212,18 @@
   grid-template-rows: auto;
 }
 
+// Box -- places an element to colored box with defined font styles
+@mixin box($bg-color: $color-1, $font-size: $font-size) {
+  @include word-wrap();
+
+  background-color: $bg-color;
+  border: $border-default;
+  font-family: $font-family;
+  font-size: $font-size;
+  display: block;
+  padding: $gap;
+}
+
 // Circle
 @mixin circle {
   &::after {
@@ -385,73 +243,6 @@
       transform: scale(1.5);
     }
   }
-}
-
-// Hero section -- adds a background color, background picture, layouts in 2 columns and manages a size of the image
-@mixin hero(
-  $img-size: $layout-header-image-width,
-  $img-size-xl: $layout-header-image-width,
-  $padding-v-xl: $gap-fivetuple
-) {
-  @include breakout($h-padding: 0);
-
-  // background-image: url('/themes/custom/gs_exovify/images/header_background.svg');
-  background-image: none;
-  // background-position: -13px top; // There was a glitch with background not starting from 0
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-// Border
-@mixin border(
-  $border-width: 1px,
-  $border-style: solid,
-  $border-color: $color-border
-) {
-  border-color: $border-color;
-  border-style: $border-style;
-  border-width: $border-width;
-}
-
-// Placeholder
-@mixin placeholder($color: $color-2, $font-size: $font-size) {
-  &::-webkit-input-placeholder {
-    // Chrome/Opera/Safari
-    color: $color;
-    font-size: $font-size;
-  }
-
-  &::-moz-placeholder {
-    // Firefox 19+
-    color: $color;
-    font-size: $font-size;
-  }
-
-  &:-ms-input-placeholder {
-    // IE 10+
-    color: $color;
-    font-size: $font-size;
-  }
-
-  &:-moz-placeholder {
-    // Firefox 18-
-    color: $color;
-    font-size: $font-size;
-    opacity: 1;
-  }
-}
-
-// Box -- places an element to colored box with defined font styles
-@mixin box($bg-color: $color-1, $font-size: $font-size) {
-  @include word-wrap();
-
-  background-color: $bg-color;
-  border: $border-default;
-  font-family: $font-family;
-  font-size: $font-size;
-  display: block;
-  padding: $gap;
 }
 
 // Count circle -- adds a background color to a circled area around the text (circles could be of 2 sizes: small and large
@@ -504,6 +295,45 @@
   }
 }
 
+// Border
+@mixin border(
+  $border-width: 1px,
+  $border-style: solid,
+  $border-color: $color-border
+) {
+  border-color: $border-color;
+  border-style: $border-style;
+  border-width: $border-width;
+}
+
+// Placeholder
+@mixin placeholder($color: $color-2, $font-size: $font-size) {
+  &::-webkit-input-placeholder {
+    // Chrome/Opera/Safari
+    color: $color;
+    font-size: $font-size;
+  }
+
+  &::-moz-placeholder {
+    // Firefox 19+
+    color: $color;
+    font-size: $font-size;
+  }
+
+  &:-ms-input-placeholder {
+    // IE 10+
+    color: $color;
+    font-size: $font-size;
+  }
+
+  &:-moz-placeholder {
+    // Firefox 18-
+    color: $color;
+    font-size: $font-size;
+    opacity: 1;
+  }
+}
+
 // Icon
 @mixin icon(
   $icon: '/src/icons/src/angle-right.svg',
@@ -527,11 +357,50 @@
   }
 }
 
+// Links
+@mixin link($color: $color-link, $color-hover: $color-link--hover) {
+  color: $color;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include transition(all, 0.2s, ease-in);
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $color-hover;
+  }
+}
+
 // List reset
 @mixin list-reset {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+// Reset button styles
+@mixin button-reset() {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+// Hero section -- adds a background color, background picture, layouts in 2 columns and manages a size of the image
+@mixin hero(
+  $img-size: $layout-header-image-width,
+  $img-size-xl: $layout-header-image-width,
+  $padding-v-xl: $gap-fivetuple
+) {
+  @include breakout($h-padding: 0);
+
+  // background-image: url('');
+  background-image: none;
+  // background-position: -13px top; // There was a glitch with background not starting from 0
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 // Calculate rem (root em) units from pixels for font-size and line-height
@@ -585,11 +454,6 @@
       }
     }
   }
-}
-
-// Transitions
-@mixin transition-ease {
-  transition: all 0.5s ease-in-out;
 }
 
 /* ----- */

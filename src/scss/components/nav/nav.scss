@@ -8,7 +8,7 @@
   position: absolute;
   right: $gap-double;
   top: $gap-double;
-  z-index: 1;
+  z-index: 1001;
   width: 28px;
   @include transition-ease;
 
@@ -78,6 +78,7 @@
   top: -$gap-double; // Needed fix (#1)
   visibility: hidden; // Initially hidden on mobile and tablet
   width: 100vw;
+  z-index: 1000;
 
   @include breakpoint(lg) {
     visibility: visible; // Initially visible on desktop
