@@ -6,8 +6,8 @@ An open-minded averagely-dressed human being in search of a peaceful, intentiona
 
 "Hard" skills:
 - Around 4 years of work experience in the IT field
-- Proficiency with HTML, (S)CSS/Sass, and Javascript (ES6+)
-- Proficiency with React and experience with Next.js
+- Proficiency with HTML, CSS, and Javascript (ES6+)
+- Proficiency with React, and experience with Next.js and Typescript
 - Proficiency in interacting with APIs
 - Proficiency with package managers (composer, npm, yarn), pre-processors (Sass, Babel), bundlers (Webpack), task runners (gulp), code linters (ESLint, Stylelint), and code versioning tools (Git, GitHub Desktop)
 - Familiarity with front-end methodologies (BEM, SMACSS, Atomic design), and accessibility standards (WCAG)
@@ -15,16 +15,15 @@ An open-minded averagely-dressed human being in search of a peaceful, intentiona
 - Experience with PHP and Laravel
 - Experience with databases (MySQL, Postgres)
 - Experience with CMS (Drupal, WordPress)
-- Experienced with Agile scrum methodology, and project management and team communication tools (Jira, Basecamp, Trello, Freshdesk, Slack)
-- Solid understanding of UI/UX principles
-- Experience with Adobe XD/Figma, and Photoshop
-- Experience with a Project management role
-- Experience with a Technical Support role
+- Understanding of Agile scrum methodology, project management, and everyday use of team communication tools (Jira, Basecamp, Trello, Freshdesk, Slack)
+- Understanding of UI/UX principles, and proficiency with web design tools (Adobe XD, Figma, Photoshop)
+- Experience with a Web Designer and Project management role
+
 
 
 “Soft” skills:
 - Active knowledge of the English language
-- Reliability, dedication, self-motivation, discipline, organization, and team communication
+- Reliability, dedication, self-motivation, discipline, organization, and helpfulness
 - Preparation to learn new things/skills and grow as a person
 - Kindness, open-mindedness, fairness
 - Natural inclination and intuition for understanding human behaviour
