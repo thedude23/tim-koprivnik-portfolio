@@ -1,6 +1,6 @@
-# Tim Koprivnik's portfolio
+# Tim Koprivnik's Portfolio
 
-Portfolio website in HTML, (S)CSS, and JS.
+This is my personal portfolio, showcasing my work as a developer. This portfolio includes projects, skills, and professional details. It was created with HTML, (S)CSS, and JS.
 
 ## License
 
